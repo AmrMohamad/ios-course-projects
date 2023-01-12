@@ -8,6 +8,11 @@ nothing yet
 
 ## In Progress Projects
 - **I Am Rich**: A basic app that displays a diamond on the screen and is used as a demonstration of setting up a new Xcode project and understanding the basics of iOS app development. (Current)
+  - How to create and set up a new iOS project from scratch
+  - Designing the app in Xcode using iOS components
+  - adding image assets into the app
+  - designing and creating a custom app icon
+  - running the app on a simulator
 - **I Am Poor**: A basic app that displays a coal on the screen and is used as a demonstration of creating and using image assets and Auto Layout constraints in Xcode.
 - **Dicee**: A simple app that allows users to roll two virtual dice by shaking their device or tapping a button. Utilized concepts such as handling user input, generating random numbers, and updating the UI.
 - **Magic 8 Ball**: A virtual magic 8 ball app that provides a random answer to a yes or no question when shaken or the ask button is pressed. Utilized concepts such as handling device motion, and displaying alerts.
