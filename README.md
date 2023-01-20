@@ -18,9 +18,16 @@ This document serves as a record of my progress as I learn iOS development throu
 
 ## In Progress Projects
 
-- **I Am Poor**: A basic app that displays a coal on the screen and is used as a demonstration of creating and using image assets and Auto Layout constraints in Xcode.
-
 - **Dicee**: A simple app that allows users to roll two virtual dice by shaking their device or tapping a button. Utilized concepts such as handling user input, generating random numbers, and updating the UI.
+  <details>
+    <summary>Objectives</summary>
+    - Designing the user interface.
+    - Changing UI Elements programmatically.
+    - Detect user interaction and respond to it.
+    - Using Swift variables and arrays to store data
+    - using randomisation in Swift
+  </details>
+
 
 - **Magic 8 Ball**: A virtual magic 8 ball app that provides a random answer to a yes or no question when shaken or the ask button is pressed. Utilized concepts such as handling device motion, and displaying alerts.
 
