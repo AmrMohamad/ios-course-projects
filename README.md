@@ -9,11 +9,13 @@ This document serves as a record of my progress as I learn iOS development throu
 - **I Am Rich**: A basic app that displays a diamond on the screen and is used as a demonstration of setting up a new Xcode project and understanding the basics of iOS app development. (Done)
   <details>
     <summary>Objectives</summary>
+
     - How to create and set up a new iOS project from scratch
     - Designing the app in Xcode using iOS components
     - adding image assets into the app
     - designing and creating a custom app icon
     - running the app on a simulator
+    
   </details>
 
 ## In Progress Projects
@@ -21,11 +23,13 @@ This document serves as a record of my progress as I learn iOS development throu
 - **Dicee**: A simple app that allows users to roll two virtual dice by shaking their device or tapping a button. Utilized concepts such as handling user input, generating random numbers, and updating the UI.
   <details>
     <summary>Objectives</summary>
+
     - Designing the user interface.
     - Changing UI Elements programmatically.
     - Detect user interaction and respond to it.
     - Using Swift variables and arrays to store data
     - using randomisation in Swift
+
   </details>
 
 
