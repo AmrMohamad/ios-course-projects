@@ -18,8 +18,6 @@ This document serves as a record of my progress as I learn iOS development throu
     
   </details>
 
-## In Progress Projects
-
 - **Dicee**: A simple app that allows users to roll two virtual dice by shaking their device or tapping a button. Utilized concepts such as handling user input, generating random numbers, and updating the UI.
   <details>
     <summary>Objectives</summary>
@@ -32,6 +30,7 @@ This document serves as a record of my progress as I learn iOS development throu
 
   </details>
 
+## In Progress Projects
 
 - **Magic 8 Ball**: A virtual magic 8 ball app that provides a random answer to a yes or no question when shaken or the ask button is pressed. Utilized concepts such as handling device motion, and displaying alerts.
 
