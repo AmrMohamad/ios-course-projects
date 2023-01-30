@@ -40,6 +40,9 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rollButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nCb-wf-Auk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -51,6 +54,10 @@
                             <constraint firstItem="IdW-s7-wfg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oSs-9c-ml5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="diceImageView1" destination="KmW-5u-LpM" id="x0F-0Y-J21"/>
+                        <outlet property="diceImageView2" destination="9Kx-hv-1aH" id="tRD-NY-tkB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
