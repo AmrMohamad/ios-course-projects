@@ -32,8 +32,6 @@ This document serves as a record of my progress as I learn iOS development throu
 
 ## In Progress Projects
 
-- **Magic 8 Ball**: A virtual magic 8 ball app that provides a random answer to a yes or no question when shaken or the ask button is pressed. Utilized concepts such as handling device motion, and displaying alerts.
-
 - **Quizzler**: A Quiz app that allows users to test their knowledge on different topics with multiple choice questions. Utilized concepts such as creating and manipulating arrays, controlling the flow of the app with if-else statements and more.
 
 ## Resources
