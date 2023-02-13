@@ -32,6 +32,18 @@ This document serves as a record of my progress as I learn iOS development throu
 
 ## In Progress Projects
 
+- **AutoLayout app**: A simple app that teaches how to use Auto Layout to create dynamic and responsive user interfaces for iOS applications.
+  <details>
+    <summary>Objectives</summary>
+
+    - Size classes and orientation.
+    - Understand and applying Constraints.
+    - Understand Alignment and Pinnig.
+    - Using containers for more fine grained control.
+    - using StackViews
+
+  </details>
+
 - **Quizzler**: A Quiz app that allows users to test their knowledge on different topics with multiple choice questions. Utilized concepts such as creating and manipulating arrays, controlling the flow of the app with if-else statements and more.
 
 ## Resources
