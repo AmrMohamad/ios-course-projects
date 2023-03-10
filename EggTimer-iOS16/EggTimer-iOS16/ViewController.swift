@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    var player:AVAudioPlayer!
     @IBOutlet weak var prograssOfEgg: UIProgressView!
     @IBOutlet weak var isDone: UILabel!
     let eggTimes = ["Soft": 300,"Medium":420,"Hard":720]
@@ -30,6 +32,13 @@ class ViewController: UIViewController {
 
         
     }
+    func playaudio(soundName:String){
+        let url = Bundle.main.url(forResource: "\(soundName)", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.prepareToPlay()
+        player.play()
+    }
+    
     @objc func updateTimer(){
         if secondsPassed<totalTime{
             secondsPassed += 1
@@ -38,6 +47,7 @@ class ViewController: UIViewController {
             print(secondsPassed)
         }else{
             timer.invalidate()
+            playaudio(soundName: "alarm_sound")
             isDone.text = "Done!"
         }
     }
