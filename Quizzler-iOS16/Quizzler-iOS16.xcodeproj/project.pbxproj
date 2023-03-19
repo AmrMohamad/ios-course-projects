@@ -13,6 +13,7 @@
 		2DF1EAE429BF7FFB0024A941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DF1EAE229BF7FFB0024A941 /* Main.storyboard */; };
 		2DF1EAE629BF7FFD0024A941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DF1EAE529BF7FFD0024A941 /* Assets.xcassets */; };
 		2DF1EAE929BF7FFD0024A941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DF1EAE729BF7FFD0024A941 /* LaunchScreen.storyboard */; };
+		2DFB46CF29C62ACC00ED5764 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB46CE29C62ACC00ED5764 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2DF1EAE529BF7FFD0024A941 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DF1EAE829BF7FFD0024A941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DF1EAEA29BF7FFD0024A941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DFB46CE29C62ACC00ED5764 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				2DF1EAE529BF7FFD0024A941 /* Assets.xcassets */,
 				2DF1EAE729BF7FFD0024A941 /* LaunchScreen.storyboard */,
 				2DF1EAEA29BF7FFD0024A941 /* Info.plist */,
+				2DFB46CE29C62ACC00ED5764 /* Question.swift */,
 			);
 			path = "Quizzler-iOS16";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF1EAE129BF7FFB0024A941 /* ViewController.swift in Sources */,
+				2DFB46CF29C62ACC00ED5764 /* Question.swift in Sources */,
 				2DF1EADD29BF7FFB0024A941 /* AppDelegate.swift in Sources */,
 				2DF1EADF29BF7FFB0024A941 /* SceneDelegate.swift in Sources */,
 			);
