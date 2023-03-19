@@ -14,9 +14,54 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseButton: UIButton!
 
     let quiz = [
-        Question(questionText: "4 + 2 = 6 ?", answer: "True"),
-        Question(questionText: "Five - Three is greater than one", answer: "True"),
-        Question(questionText: "3 + Eight is < 10", answer: "False")
+        Question(
+            questionText: "A slug's blood is green.",
+            answer: "True"
+        ),
+        Question(
+            questionText: "Approximately one quarter of human bones are in the feet.",
+            answer: "True"
+        ),
+        Question(
+            questionText: "The total surface area of two human lungs is approximately 70 square metres.",
+            answer: "True"
+        ),
+        Question(
+            questionText: "In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.",
+            answer: "True"
+        ),
+        Question(
+            questionText: "In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.",
+            answer: "False"
+        ),
+        Question(
+            questionText: "It is illegal to pee in the Ocean in Portugal.",
+            answer: "True"
+        ),
+        Question(
+            questionText: "You can lead a cow down stairs but not up stairs.",
+            answer: "False"
+        ),
+        Question(
+            questionText: "Google was originally called 'Backrub'.",
+            answer: "True"
+        ),
+        Question(
+            questionText: "Buzz Aldrin's mother's maiden name was 'Moon'.",
+            answer: "True"
+        ),
+        Question(
+            questionText: "The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.",
+            answer: "False"
+        ),
+        Question(
+            questionText: "No piece of square dry paper can be folded in half more than 7 times.",
+            answer: "False"
+        ),
+        Question(
+            questionText: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.",
+            answer: "True"
+        )
     ]
     
     var currentQuestionNumber: Int = 0
