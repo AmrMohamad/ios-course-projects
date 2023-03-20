@@ -24,8 +24,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uKB-RG-GuT">
                                 <rect key="frame" x="20" y="48" width="374" height="814"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Oc-R7-Dgv">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="JKM-vx-Qbj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVb-ev-bUd">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="614"/>
+                                        <rect key="frame" x="0.0" y="90" width="374" height="524"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -84,6 +93,7 @@
                         <outlet property="falseButton" destination="YFl-KT-3kv" id="wlz-hI-hSH"/>
                         <outlet property="progressBar" destination="O0z-MV-4iU" id="l1m-Mo-Osa"/>
                         <outlet property="questionLabel" destination="XVb-ev-bUd" id="1nU-vX-dS3"/>
+                        <outlet property="scoreLabel" destination="6Oc-R7-Dgv" id="2as-e9-Oz3"/>
                         <outlet property="trueButton" destination="C0G-8e-zzw" id="xUn-wD-5na"/>
                     </connections>
                 </viewController>
