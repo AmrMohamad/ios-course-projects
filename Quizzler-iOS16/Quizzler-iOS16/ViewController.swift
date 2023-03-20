@@ -65,7 +65,6 @@ class ViewController: UIViewController {
     ]
     
     var currentQuestionNumber: Int = 0
-    var progressPercentage: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,24 +87,23 @@ class ViewController: UIViewController {
         let rightAnswer = quiz[currentQuestionNumber].answer
         
         if userAnswer == rightAnswer {
-            currentQuestionNumber += 1
-            progressPercentage = Float(currentQuestionNumber)/Float(quiz.count)
-            updateUI()
+            sender.backgroundColor = UIColor.green
+        }else{
+            sender.backgroundColor = UIColor.red
         }
-        
-    }
-    
-    func updateUI(){
-        if currentQuestionNumber < quiz.count{
-            questionLabel.text = quiz[currentQuestionNumber].questionText
-            progressBar.progress = progressPercentage
+        if currentQuestionNumber+1 < quiz.count {
+            currentQuestionNumber += 1
         }else{
             currentQuestionNumber = 0
-            progressPercentage = 0.0
-            questionLabel.text = quiz[currentQuestionNumber].questionText
-            progressBar.progress = progressPercentage
         }
-        
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+    }
+    
+    @objc func updateUI(){
+        questionLabel.text = quiz[currentQuestionNumber].questionText
+        progressBar.progress = Float(currentQuestionNumber + 1)/Float(quiz.count)
+        falseButton.backgroundColor = UIColor.clear
+        trueButton.backgroundColor = UIColor.clear
     }
 }
 
