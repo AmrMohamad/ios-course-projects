@@ -39,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D242BE029C88C200023D9F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2DFB46CE29C62ACC00ED5764 /* Question.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D242BE129C88C4F0023D9F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DF1EAE229BF7FFB0024A941 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D242BE229C88C720023D9F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2DF1EAE029BF7FFB0024A941 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2DF1EAD029BF7FFB0024A941 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +82,14 @@
 		2DF1EADB29BF7FFB0024A941 /* Quizzler-iOS16 */ = {
 			isa = PBXGroup;
 			children = (
+				2D242BE029C88C200023D9F7 /* Model */,
+				2D242BE229C88C720023D9F7 /* Controller */,
+				2D242BE129C88C4F0023D9F7 /* View */,
 				2DF1EADC29BF7FFB0024A941 /* AppDelegate.swift */,
 				2DF1EADE29BF7FFB0024A941 /* SceneDelegate.swift */,
-				2DF1EAE029BF7FFB0024A941 /* ViewController.swift */,
-				2DF1EAE229BF7FFB0024A941 /* Main.storyboard */,
 				2DF1EAE529BF7FFD0024A941 /* Assets.xcassets */,
 				2DF1EAE729BF7FFD0024A941 /* LaunchScreen.storyboard */,
 				2DF1EAEA29BF7FFD0024A941 /* Info.plist */,
-				2DFB46CE29C62ACC00ED5764 /* Question.swift */,
 			);
 			path = "Quizzler-iOS16";
 			sourceTree = "<group>";
