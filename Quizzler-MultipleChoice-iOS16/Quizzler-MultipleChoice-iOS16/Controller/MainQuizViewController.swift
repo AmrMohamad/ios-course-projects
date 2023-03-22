@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainQuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
