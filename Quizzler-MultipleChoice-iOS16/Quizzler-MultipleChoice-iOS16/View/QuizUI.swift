@@ -77,7 +77,7 @@ class QuizUI {
         let bar = UIProgressView()
         bar.translatesAutoresizingMaskIntoConstraints = false
         bar.progressViewStyle = .bar
-        bar.progress = 0.1
+        bar.progress = 0.0
         bar.contentMode = .scaleToFill
         bar.progressTintColor = UIColor(named: "progressBarColor")
         bar.trackTintColor = .white

@@ -10,6 +10,7 @@ import UIKit
 class MainQuizViewController: UIViewController {
     
     var quizUI = QuizUI()
+    var quiz = QuizEngine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +25,39 @@ class MainQuizViewController: UIViewController {
         view.addSubview(quizUI.questionTextLabel)
         
         setUI()
+        updateUI()
         configureButtons()
     }
     
     @objc func tapped(_ sender: UIButton){
-        print(sender.currentTitle!)
+        let result  = quiz.checkAnswer(user: sender.currentTitle!)
+        if result {
+            sender.backgroundColor = UIColor.green
+        }else{
+            sender.backgroundColor = UIColor.red
+        }
+        
+        quiz.nextQuestion()
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     func configureButtons(){
         quizUI.choose3Button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         quizUI.choose2Button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         quizUI.choose1Button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
     }
+    
+    @objc func updateUI(){
+        quizUI.questionTextLabel.text = quiz.getQuestionText()
+        quizUI.progressBar.progress = quiz.getProgress()
+        quizUI.scoreLabel.text = "Score: \(quiz.getScore())"
+        quizUI.choose1Button.setTitle(quiz.getChoices()[0], for: .normal)
+        quizUI.choose1Button.backgroundColor = UIColor.clear
+        quizUI.choose2Button.setTitle(quiz.getChoices()[1], for: .normal)
+        quizUI.choose2Button.backgroundColor = UIColor.clear
+        quizUI.choose3Button.setTitle(quiz.getChoices()[2], for: .normal)
+        quizUI.choose3Button.backgroundColor = UIColor.clear
+    }
+    
 }
 
 
