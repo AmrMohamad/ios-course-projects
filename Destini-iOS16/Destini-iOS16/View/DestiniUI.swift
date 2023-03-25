@@ -26,6 +26,26 @@ class DestiniUI {
         return label
     }()
     
+    let choice1Button: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = CGFloat(25)
+        button.setTitle("Choice 1", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25, weight: .medium)
+        button.backgroundColor = UIColor(named: "Choice 1 Button")
+        return button
+    }()
     
+    let choice2Button: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = CGFloat(25)
+        button.setTitle("Choice 2", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25, weight: .medium)
+        button.backgroundColor = UIColor(named: "Choice 2 Button")
+        return button
+    }()
     
 }

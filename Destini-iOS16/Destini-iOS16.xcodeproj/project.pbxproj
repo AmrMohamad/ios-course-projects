@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D426B0129CF587500BFA787 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D426B0029CF587500BFA787 /* Story.swift */; };
+		2D426B0329CF588400BFA787 /* StoryEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D426B0229CF588400BFA787 /* StoryEngine.swift */; };
 		2D494AC129CDDDBF00BCF9C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D494AC029CDDDBF00BCF9C4 /* AppDelegate.swift */; };
 		2D494AC329CDDDBF00BCF9C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D494AC229CDDDBF00BCF9C4 /* SceneDelegate.swift */; };
 		2D494AC529CDDDBF00BCF9C4 /* MainDestiniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D494AC429CDDDBF00BCF9C4 /* MainDestiniViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D426B0029CF587500BFA787 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		2D426B0229CF588400BFA787 /* StoryEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryEngine.swift; sourceTree = "<group>"; };
 		2D494ABD29CDDDBF00BCF9C4 /* Destini-iOS16.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Destini-iOS16.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D494AC029CDDDBF00BCF9C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D494AC229CDDDBF00BCF9C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		2D494AD529CDDF6B00BCF9C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2D426B0029CF587500BFA787 /* Story.swift */,
+				2D426B0229CF588400BFA787 /* StoryEngine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 				2D494AC529CDDDBF00BCF9C4 /* MainDestiniViewController.swift in Sources */,
 				2D494AC129CDDDBF00BCF9C4 /* AppDelegate.swift in Sources */,
 				2D494AC329CDDDBF00BCF9C4 /* SceneDelegate.swift in Sources */,
+				2D426B0129CF587500BFA787 /* Story.swift in Sources */,
+				2D426B0329CF588400BFA787 /* StoryEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
