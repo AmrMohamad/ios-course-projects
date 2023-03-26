@@ -23,6 +23,9 @@ class DestiniUI {
         label.text = "Story Text"
         label.font = UIFont.systemFont(ofSize: 25, weight: .regular)
         label.textColor = .white
+        label.layer.shadowRadius = 2.0
+        label.layer.shadowOpacity = 0.2
+        label.layer.shadowOffset = CGSize(width: 1, height: 2)
         return label
     }()
     
@@ -31,6 +34,7 @@ class DestiniUI {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = CGFloat(25)
         button.setTitle("Choice 1", for: .normal)
+        button.titleLabel?.numberOfLines = 0
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25, weight: .medium)
         button.backgroundColor = UIColor(named: "Choice 1 Button")
@@ -42,6 +46,7 @@ class DestiniUI {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = CGFloat(25)
         button.setTitle("Choice 2", for: .normal)
+        button.titleLabel?.numberOfLines = 0
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25, weight: .medium)
         button.backgroundColor = UIColor(named: "Choice 2 Button")

@@ -10,14 +10,8 @@ import UIKit
 class MainDestiniViewController: UIViewController {
 
     let destiniUI = DestiniUI()
+    var story = StoryEngine()
     
-    let story = [
-        Story(title: "You see a fork in the road", choice1: "Take a left", choice2: "Take a right"),
-        Story(title: "You see a tiger", choice1: "Shout for help", choice2: "Play dead"),
-        Story(title: "You find treasure chest", choice1: "Open it", choice2: "Check for traps")
-    ]
-    
-    var currentChapter:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,8 +24,11 @@ class MainDestiniViewController: UIViewController {
         configButtons()
     }
     
-    @objc func selectedChoice (){
-        print("test")
+    @objc func selectedChoice (sender:UIButton){
+        let decision = sender.currentTitle!
+        story.nextEvent(user: decision)
+        updateUI()
+        
     }
 
     func configButtons (){
@@ -44,9 +41,9 @@ class MainDestiniViewController: UIViewController {
 extension MainDestiniViewController {
     
     func updateUI(){
-        destiniUI.storyLabel.text = story[currentChapter].title
-        destiniUI.choice1Button.setTitle(story[currentChapter].choice1, for: .normal)
-        destiniUI.choice2Button.setTitle(story[currentChapter].choice2, for: .normal)
+        destiniUI.storyLabel.text = story.getStoryText()
+        destiniUI.choice1Button.setTitle(story.getChoices()[0], for: .normal)
+        destiniUI.choice2Button.setTitle(story.getChoices()[1], for: .normal)
     }
     
     
