@@ -42,7 +42,7 @@ This document serves as a record of my progress as I learn iOS development throu
 
   </details>
 
-  - **Xylophone app**: Lets users play musical notes by tapping on colored bars on the screen. 
+- **Xylophone app**: Lets users play musical notes by tapping on colored bars on the screen. 
   <details>
     <summary>Objectives</summary>
 

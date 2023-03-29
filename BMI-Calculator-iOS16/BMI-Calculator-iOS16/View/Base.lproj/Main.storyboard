@@ -115,11 +115,78 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="-28"/>
+            <point key="canvasLocation" x="-710" y="-9"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lGo-GZ-dwc">
+            <objects>
+                <viewController id="CEg-1n-Pma" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0nE-Sf-o3F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="Hde-Kd-IUc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="70o-7l-7Av">
+                                <rect key="frame" x="89" y="367.5" width="236" height="161.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR RESULT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIZ-0e-9gM">
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJH-Af-Q49">
+                                        <rect key="frame" x="0.0" y="42" width="236" height="95.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EAT SOME MORE SNACKS!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3C-YS-gVb">
+                                        <rect key="frame" x="0.0" y="137.5" width="236" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49B-Oa-yAL">
+                                <rect key="frame" x="20" y="811" width="374" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="cSz-dP-IOA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="RECALCULATE">
+                                    <color key="titleColor" red="0.4549019608" green="0.44705882349999998" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v0U-fn-oT0"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.4823529411764706" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v0U-fn-oT0" firstAttribute="bottom" secondItem="49B-Oa-yAL" secondAttribute="bottom" id="3ZE-Kk-lon"/>
+                            <constraint firstItem="Hde-Kd-IUc" firstAttribute="leading" secondItem="v0U-fn-oT0" secondAttribute="leading" id="5VG-WS-iaf"/>
+                            <constraint firstItem="70o-7l-7Av" firstAttribute="centerY" secondItem="0nE-Sf-o3F" secondAttribute="centerY" id="Dea-zq-arb"/>
+                            <constraint firstItem="70o-7l-7Av" firstAttribute="centerX" secondItem="0nE-Sf-o3F" secondAttribute="centerX" id="EZa-XB-qAF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="49B-Oa-yAL" secondAttribute="trailing" id="TKM-Yr-Spk"/>
+                            <constraint firstItem="Hde-Kd-IUc" firstAttribute="top" secondItem="0nE-Sf-o3F" secondAttribute="top" id="U1C-gt-LVx"/>
+                            <constraint firstAttribute="bottom" secondItem="Hde-Kd-IUc" secondAttribute="bottom" id="pVT-ax-40q"/>
+                            <constraint firstItem="Hde-Kd-IUc" firstAttribute="trailing" secondItem="v0U-fn-oT0" secondAttribute="trailing" id="zmH-hV-5iv"/>
+                            <constraint firstItem="49B-Oa-yAL" firstAttribute="leading" secondItem="0nE-Sf-o3F" secondAttribute="leadingMargin" id="zrG-Rc-AfG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ner-34-8zu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="-9.375"/>
         </scene>
     </scenes>
     <resources>
         <image name="calculate_background" width="375" height="812"/>
+        <image name="result_background" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
