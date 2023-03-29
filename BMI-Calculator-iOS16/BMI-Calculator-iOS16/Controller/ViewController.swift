@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  BMI-Calculator-UIKit-iOS16
+//  BMI-Calculator-iOS16
 //
-//  Created by Amr Mohamad on 28/03/2023.
+//  Created by Amr Mohamad on 29/03/2023.
 //
 
 import UIKit
