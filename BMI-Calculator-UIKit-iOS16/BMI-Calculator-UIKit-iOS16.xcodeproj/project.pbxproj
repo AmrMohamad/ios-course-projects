@@ -13,6 +13,8 @@
 		2DB8589F29D3465600A7CBB3 /* BMIMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB8589E29D3465600A7CBB3 /* BMIMainViewController.swift */; };
 		2DB858A429D3465800A7CBB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DB858A329D3465800A7CBB3 /* Assets.xcassets */; };
 		2DB858A729D3465800A7CBB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DB858A529D3465800A7CBB3 /* LaunchScreen.storyboard */; };
+		2DF53F7429DC6E46000230C1 /* BMIResultScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF53F7329DC6E46000230C1 /* BMIResultScreenUI.swift */; };
+		2DF53F7629DC6EB4000230C1 /* BMIResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF53F7529DC6EB4000230C1 /* BMIResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2DB858A329D3465800A7CBB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DB858A629D3465800A7CBB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DB858A829D3465800A7CBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DF53F7329DC6E46000230C1 /* BMIResultScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIResultScreenUI.swift; sourceTree = "<group>"; };
+		2DF53F7529DC6EB4000230C1 /* BMIResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				2DB8589E29D3465600A7CBB3 /* BMIMainViewController.swift */,
+				2DF53F7529DC6EB4000230C1 /* BMIResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				2D8C31ED29D45545008D1E0C /* BMIMainScreenUI.swift */,
+				2DF53F7329DC6E46000230C1 /* BMIResultScreenUI.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,8 +169,10 @@
 			files = (
 				2DB8589F29D3465600A7CBB3 /* BMIMainViewController.swift in Sources */,
 				2DB8589B29D3465600A7CBB3 /* AppDelegate.swift in Sources */,
+				2DF53F7629DC6EB4000230C1 /* BMIResultViewController.swift in Sources */,
 				2DB8589D29D3465600A7CBB3 /* SceneDelegate.swift in Sources */,
 				2D8C31EE29D45545008D1E0C /* BMIMainScreenUI.swift in Sources */,
+				2DF53F7429DC6E46000230C1 /* BMIResultScreenUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

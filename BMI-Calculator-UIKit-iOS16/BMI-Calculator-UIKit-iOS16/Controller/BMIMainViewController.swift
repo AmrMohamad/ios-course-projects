@@ -26,6 +26,19 @@ class BMIMainViewController: UIViewController {
         
         
         setUI()
+        configButton()
+    }
+    
+    @objc func viewScreen (){
+        let resultScreen = BMIResultViewController()
+        
+        resultScreen.modalPresentationStyle = .pageSheet
+        resultScreen.sheetPresentationController?.prefersGrabberVisible = true
+        present(resultScreen, animated: true)
+    }
+    
+    func configButton (){
+        uiBMI.calculateButton.addTarget(self, action: #selector(viewScreen), for: .touchUpInside)
     }
 
 }
