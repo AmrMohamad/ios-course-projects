@@ -15,4 +15,83 @@ class BMIMainScreenUI {
         image.contentMode = .scaleToFill
         return image
     }()
+    
+    let calculateButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("CALCULATE", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(named: "backgroundColorCalculateButton")
+        return button
+    }()
+    
+    let weightSlider: UISlider = {
+        let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.setValue(0.5, animated: true)
+        slider.minimumValue = 0.0
+        slider.maximumValue = 1.0
+        slider.minimumTrackTintColor = UIColor(named: "sliderColor")
+        slider.thumbTintColor = UIColor(named: "sliderColor")
+        return slider
+    }()
+    
+    let heightSlider: UISlider = {
+        let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.setValue(0.150, animated: true)
+        slider.minimumValue = 0.0
+        slider.maximumValue = 0.300
+        slider.minimumTrackTintColor = UIColor(named: "sliderColor")
+        slider.thumbTintColor = UIColor(named: "sliderColor")
+        return slider
+    }()
+    
+    let weightLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Weight"
+        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.textColor = .darkGray
+        return label
+    }()
+    
+    let weightNumberLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "100Kg"
+        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.textColor = .darkGray
+        return label
+    }()
+    
+    let heightLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Height"
+        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.textColor = .darkGray
+        return label
+    }()
+    
+    let heightNumberLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "1.5m"
+        label.font = UIFont.systemFont(ofSize: 17, weight: .light)
+        label.textColor = .darkGray
+        return label
+    }()
+    
+    let calculateYourBMILabel : UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "CALCULATE YOUR BMI"
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        label.textColor = .darkGray
+        return label
+    }()
+
 }
