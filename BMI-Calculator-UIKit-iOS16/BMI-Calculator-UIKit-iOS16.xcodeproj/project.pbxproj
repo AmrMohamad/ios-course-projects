@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D657AE729E1A2BC009354E9 /* BMIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D657AE629E1A2BC009354E9 /* BMIEngine.swift */; };
+		2D657AE929E1A2C9009354E9 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D657AE829E1A2C9009354E9 /* BMI.swift */; };
 		2D8C31EE29D45545008D1E0C /* BMIMainScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C31ED29D45545008D1E0C /* BMIMainScreenUI.swift */; };
 		2DB8589B29D3465600A7CBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB8589A29D3465600A7CBB3 /* AppDelegate.swift */; };
 		2DB8589D29D3465600A7CBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB8589C29D3465600A7CBB3 /* SceneDelegate.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D657AE629E1A2BC009354E9 /* BMIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIEngine.swift; sourceTree = "<group>"; };
+		2D657AE829E1A2C9009354E9 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 		2D8C31ED29D45545008D1E0C /* BMIMainScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIMainScreenUI.swift; sourceTree = "<group>"; };
 		2DB8589729D3465600A7CBB3 /* BMI-Calculator-UIKit-iOS16.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BMI-Calculator-UIKit-iOS16.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DB8589A29D3465600A7CBB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 		2DB858AE29D346D100A7CBB3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2D657AE629E1A2BC009354E9 /* BMIEngine.swift */,
+				2D657AE829E1A2C9009354E9 /* BMI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,8 +177,10 @@
 				2DB8589B29D3465600A7CBB3 /* AppDelegate.swift in Sources */,
 				2DF53F7629DC6EB4000230C1 /* BMIResultViewController.swift in Sources */,
 				2DB8589D29D3465600A7CBB3 /* SceneDelegate.swift in Sources */,
+				2D657AE929E1A2C9009354E9 /* BMI.swift in Sources */,
 				2D8C31EE29D45545008D1E0C /* BMIMainScreenUI.swift in Sources */,
 				2DF53F7429DC6E46000230C1 /* BMIResultScreenUI.swift in Sources */,
+				2D657AE729E1A2BC009354E9 /* BMIEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

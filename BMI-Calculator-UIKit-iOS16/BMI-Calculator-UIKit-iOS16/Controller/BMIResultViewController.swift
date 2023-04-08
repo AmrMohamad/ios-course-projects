@@ -10,24 +10,43 @@ import UIKit
 class BMIResultViewController: UIViewController {
 
     let uiBMIReslut = BMIResultScreenUI()
+    
+    var bmiResultValue: String?
+    var bmiResultAdvice: String?
+    var bmiResultColor: UIColor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "resultBG")
         
+        setUI()
+        
+        uiBMIReslut.resultNumberLabel.text = bmiResultValue!
+        uiBMIReslut.adviseResultLabel.text = bmiResultAdvice!
+        view.backgroundColor = bmiResultColor!
+        
+        configButton()
+    }
+    
+    @objc func reCalculateButtonPressed(){
+        dismiss(animated: true)
+    }
+    
+    func configButton() -> Void {
+        uiBMIReslut.reCalculateButton.addTarget(self,
+                                                action: #selector(reCalculateButtonPressed),
+                                                for: .touchUpInside)
+    }
+    
+}
+
+extension BMIResultViewController{
+    func setUI () {
         view.addSubview(uiBMIReslut.background)
         view.addSubview(uiBMIReslut.reCalculateButton)
         view.addSubview(uiBMIReslut.resultNumberLabel)
         view.addSubview(uiBMIReslut.yourResultLabel)
         view.addSubview(uiBMIReslut.adviseResultLabel)
         
-        setUI()
-    }
-    
-    
-}
-
-extension BMIResultViewController{
-    func setUI () {
         let backgroundImage = [
             uiBMIReslut.background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             uiBMIReslut.background.leadingAnchor.constraint(equalTo: view.leadingAnchor),

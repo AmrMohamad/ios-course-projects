@@ -9,10 +9,50 @@ import UIKit
 
 class BMIMainViewController: UIViewController {
     let uiBMI = BMIMainScreenUI()
-
+    
+    var bmiEngine = BMIEngine()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setUI()
+        configUI()
+    }
+    
+    @objc func heightSliderChaged(_ sender:UISlider) {
+        uiBMI.heightNumberLabel.text = "\(String(format: "%.1f",sender.value))m"
+    }
+    
+    @objc func weightSliderChaged(_ sender:UISlider) {
+        uiBMI.weightNumberLabel.text = "\(Int(sender.value))Kg"
+    }
+    
+    @objc func calculatePressed (_ sender:UIButton){
+        
+        bmiEngine.calculateBMI(height: uiBMI.heightSlider.value, weight: uiBMI.weightSlider.value)
+        
+        let resultScreen = BMIResultViewController()
+        resultScreen.bmiResultValue  = bmiEngine.getBMIValue()
+        resultScreen.bmiResultAdvice = bmiEngine.getAdvice()
+        resultScreen.bmiResultColor  = bmiEngine.getColor()
+        
+        resultScreen.modalPresentationStyle = .pageSheet
+        resultScreen.sheetPresentationController?.prefersGrabberVisible = true
+        present(resultScreen, animated: true)
+    }
+    
+    func configUI (){
+        uiBMI.calculateButton.addTarget(self, action: #selector(calculatePressed), for: .touchUpInside)
+        
+        uiBMI.heightSlider.addTarget(self, action: #selector(heightSliderChaged), for: .valueChanged)
+        uiBMI.weightSlider.addTarget(self, action: #selector(weightSliderChaged), for: .valueChanged)
+    }
+
+}
+
+extension BMIMainViewController{
+    func setUI() {
+        
         view.backgroundColor = .systemBackground
         view.addSubview(uiBMI.background)
         view.addSubview(uiBMI.calculateButton)
@@ -24,27 +64,6 @@ class BMIMainViewController: UIViewController {
         view.addSubview(uiBMI.heightNumberLabel)
         view.addSubview(uiBMI.calculateYourBMILabel)
         
-        
-        setUI()
-        configButton()
-    }
-    
-    @objc func viewScreen (){
-        let resultScreen = BMIResultViewController()
-        
-        resultScreen.modalPresentationStyle = .pageSheet
-        resultScreen.sheetPresentationController?.prefersGrabberVisible = true
-        present(resultScreen, animated: true)
-    }
-    
-    func configButton (){
-        uiBMI.calculateButton.addTarget(self, action: #selector(viewScreen), for: .touchUpInside)
-    }
-
-}
-
-extension BMIMainViewController{
-    func setUI() {
         let background = [
             uiBMI.background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             uiBMI.background.leadingAnchor.constraint(equalTo: view.leadingAnchor),

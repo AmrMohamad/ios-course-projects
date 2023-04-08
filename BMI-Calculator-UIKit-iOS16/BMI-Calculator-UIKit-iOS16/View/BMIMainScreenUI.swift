@@ -29,9 +29,9 @@ class BMIMainScreenUI {
     let weightSlider: UISlider = {
         let slider = UISlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.setValue(0.5, animated: true)
-        slider.minimumValue = 0.0
-        slider.maximumValue = 1.0
+        slider.minimumValue = Float(0)
+        slider.maximumValue = Float(200)
+        slider.setValue(slider.maximumValue/2, animated: true)
         slider.minimumTrackTintColor = UIColor(named: "sliderColor")
         slider.thumbTintColor = UIColor(named: "sliderColor")
         return slider
@@ -40,9 +40,9 @@ class BMIMainScreenUI {
     let heightSlider: UISlider = {
         let slider = UISlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.setValue(0.150, animated: true)
-        slider.minimumValue = 0.0
-        slider.maximumValue = 0.300
+        slider.minimumValue = Float(0)
+        slider.maximumValue = Float(3)
+        slider.setValue(slider.maximumValue/2, animated: true)
         slider.minimumTrackTintColor = UIColor(named: "sliderColor")
         slider.thumbTintColor = UIColor(named: "sliderColor")
         return slider
