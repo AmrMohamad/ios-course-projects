@@ -189,8 +189,75 @@
                     <view key="view" contentMode="scaleToFill" id="dN6-YT-QdJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxq-BK-eLq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total per person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btg-Ec-4td">
+                                        <rect key="frame" x="0.0" y="132" width="414" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="sEF-39-fDc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="56.32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCS-1D-Hkl">
+                                        <rect key="frame" x="0.0" y="168" width="414" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Scx-rZ-XDW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.84313725490196079" green="0.97647058823529409" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="btg-Ec-4td" secondAttribute="trailing" id="5DR-B8-CPQ"/>
+                                    <constraint firstItem="btg-Ec-4td" firstAttribute="centerY" secondItem="rxq-BK-eLq" secondAttribute="centerY" id="GeM-de-WmZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="xCS-1D-Hkl" secondAttribute="trailing" id="L58-2a-q9Z"/>
+                                    <constraint firstItem="btg-Ec-4td" firstAttribute="leading" secondItem="rxq-BK-eLq" secondAttribute="leading" id="Qi7-9w-tlu"/>
+                                    <constraint firstAttribute="height" constant="300" id="UBf-lX-AOo"/>
+                                    <constraint firstItem="xCS-1D-Hkl" firstAttribute="leading" secondItem="rxq-BK-eLq" secondAttribute="leading" id="pCu-Tb-ia8"/>
+                                    <constraint firstItem="xCS-1D-Hkl" firstAttribute="top" secondItem="btg-Ec-4td" secondAttribute="bottom" id="z6x-X9-xai"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7e0-PR-zuN">
+                                <rect key="frame" x="50" y="305" width="314" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="Bou-gD-hUe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.58431372550000005" green="0.60392156860000001" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwI-0R-c0H">
+                                <rect key="frame" x="107" y="808" width="200" height="54"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="7Vn-tL-cSl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="H2M-gh-E6I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Recalculate">
+                                    <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OYh-0R-2DJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7e0-PR-zuN" firstAttribute="leading" secondItem="OYh-0R-2DJ" secondAttribute="leading" constant="50" id="8Q8-rM-NcC"/>
+                            <constraint firstItem="HwI-0R-c0H" firstAttribute="centerX" secondItem="dN6-YT-QdJ" secondAttribute="centerX" id="DCQ-Fx-e3Q"/>
+                            <constraint firstItem="rxq-BK-eLq" firstAttribute="leading" secondItem="dN6-YT-QdJ" secondAttribute="leading" id="Oav-4H-fJJ"/>
+                            <constraint firstItem="rxq-BK-eLq" firstAttribute="top" secondItem="dN6-YT-QdJ" secondAttribute="top" id="b8z-CK-bxs"/>
+                            <constraint firstItem="OYh-0R-2DJ" firstAttribute="trailing" secondItem="7e0-PR-zuN" secondAttribute="trailing" constant="50" id="cih-ZG-HJz"/>
+                            <constraint firstItem="HwI-0R-c0H" firstAttribute="bottom" secondItem="OYh-0R-2DJ" secondAttribute="bottom" id="lqk-3b-YXa"/>
+                            <constraint firstAttribute="trailing" secondItem="rxq-BK-eLq" secondAttribute="trailing" id="nII-v2-18F"/>
+                            <constraint firstItem="7e0-PR-zuN" firstAttribute="top" secondItem="rxq-BK-eLq" secondAttribute="bottom" constant="5" id="rwb-V2-UaT"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elR-jG-aq5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -199,9 +266,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
