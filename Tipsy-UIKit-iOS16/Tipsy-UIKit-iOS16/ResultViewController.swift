@@ -11,12 +11,19 @@ class ResultViewController: UIViewController {
     
     let resultUI = ResultScreenUI()
     
+    var sentTotalValue:String?
+    var numberOfPersons: Int?
+    var valueOfTip:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setUI()
         configUI()
+        
+        resultUI.totalPerPersonValueLabel.text = sentTotalValue!
+        resultUI.descriptionSettingsLabel.text = "Split between \(numberOfPersons!) people, with \(valueOfTip!) tip."
     }
 
     @objc func recalculateButtonPressed(){

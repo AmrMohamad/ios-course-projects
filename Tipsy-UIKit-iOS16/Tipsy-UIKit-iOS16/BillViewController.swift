@@ -11,6 +11,8 @@ class BillViewController: UIViewController {
     
     let billUI = BillScreenUI()
     
+    var tipValue      : Double?
+    var billPerPerson : Double?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -18,12 +20,53 @@ class BillViewController: UIViewController {
         configUI()
     }
     
+    @objc func selectTipValue (_ sender:UIButton){
+        billUI.billValueTextField.endEditing(true)
+        
+        billUI.zeroPresentValueButton.isSelected = false
+        billUI.tenPresentValueButton.isSelected = false
+        billUI.twentyPresentValueButton.isSelected = false
+        
+        let selectedButton = true
+        
+        switch sender.currentTitle! {
+        case "0%":
+            billUI.zeroPresentValueButton.isSelected = selectedButton
+            tipValue = 0.0
+        case "10%":
+            billUI.tenPresentValueButton.isSelected = selectedButton
+            tipValue = 0.1
+        case "20%":
+            billUI.twentyPresentValueButton.isSelected = selectedButton
+            tipValue = 0.2
+        default:
+            print("wrong select")
+        }
+    }
+    
+    @objc func stepperValueChaged(_ sender: UIStepper) {
+        billUI.splitValueLabel.text = String(Int(sender.value))
+    }
+    
     @objc func calculateButtonPressed(_ sender:UIButton){
+        let billValue = billUI.billValueTextField.text!
+        
+        if billValue.isEmpty == false {
+            billPerPerson = ((Double(billValue)! * (tipValue ?? 0.0)) + Double(billValue)!) / billUI.stepperOfSplitValue.value
+        }
+        
+        
         let resultScreen = ResultViewController()
+        resultScreen.sentTotalValue = String(format: "%.2f", billPerPerson ?? 0.0)
+        resultScreen.numberOfPersons = Int(billUI.stepperOfSplitValue.value)
+        resultScreen.valueOfTip = "\(Int((tipValue ?? 0.0)*100))%"
+        
         resultScreen.modalPresentationStyle = .pageSheet
         resultScreen.sheetPresentationController?.prefersGrabberVisible = true
         present(resultScreen, animated: true)
     }
+    
+    
 
 }
 
@@ -31,6 +74,12 @@ extension BillViewController {
     
     func configUI(){
         billUI.calculateButton.addTarget(self, action: #selector(calculateButtonPressed), for: .touchUpInside)
+        
+        billUI.zeroPresentValueButton.addTarget(self, action: #selector(selectTipValue), for: .touchUpInside)
+        billUI.tenPresentValueButton.addTarget(self, action: #selector(selectTipValue), for: .touchUpInside)
+        billUI.twentyPresentValueButton.addTarget(self, action: #selector(selectTipValue), for: .touchUpInside)
+        
+        billUI.stepperOfSplitValue.addTarget(self, action: #selector(stepperValueChaged), for: .valueChanged)
     }
     
     func setUI() {
