@@ -15,14 +15,23 @@ class BillViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUI()
+        configUI()
     }
-
+    
+    @objc func calculateButtonPressed(_ sender:UIButton){
+        let resultScreen = ResultViewController()
+        resultScreen.modalPresentationStyle = .pageSheet
+        resultScreen.sheetPresentationController?.prefersGrabberVisible = true
+        present(resultScreen, animated: true)
+    }
 
 }
 
 extension BillViewController {
     
-    
+    func configUI(){
+        billUI.calculateButton.addTarget(self, action: #selector(calculateButtonPressed), for: .touchUpInside)
+    }
     
     func setUI() {
         view.backgroundColor = .systemBackground
@@ -74,7 +83,7 @@ extension BillViewController {
             billUI.zeroPresentValueButton.leadingAnchor.constraint(equalTo: billUI.tipsValueView.leadingAnchor,
                                                                    constant: 15),
             billUI.zeroPresentValueButton.topAnchor.constraint(equalTo: billUI.selectTipLabel.bottomAnchor,
-                                                               constant: 26),
+                                                               constant: 20),
             billUI.zeroPresentValueButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 60),
             billUI.zeroPresentValueButton.heightAnchor.constraint(equalToConstant: 54)
         ]
@@ -95,7 +104,7 @@ extension BillViewController {
         
         let chooseSplitLabelConstraints = [
             billUI.chooseSplitLabel.leadingAnchor.constraint(equalTo: billUI.selectTipLabel.leadingAnchor),
-            billUI.chooseSplitLabel.topAnchor.constraint(equalTo: billUI.zeroPresentValueButton.bottomAnchor, constant: 26),
+            billUI.chooseSplitLabel.topAnchor.constraint(equalTo: billUI.zeroPresentValueButton.bottomAnchor, constant: 22),
             billUI.chooseSplitLabel.heightAnchor.constraint(equalToConstant: 30)
         ]
         

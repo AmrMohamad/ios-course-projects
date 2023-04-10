@@ -13,6 +13,8 @@
 		2D657B2029E1B425009354E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D657B1F29E1B425009354E9 /* Assets.xcassets */; };
 		2D657B2329E1B425009354E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D657B2129E1B425009354E9 /* LaunchScreen.storyboard */; };
 		2D9837E829E3097700C1E218 /* BillScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9837E729E3097700C1E218 /* BillScreenUI.swift */; };
+		2D9837EA29E3963900C1E218 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9837E929E3963900C1E218 /* ResultViewController.swift */; };
+		2D9837EC29E397A000C1E218 /* ResultScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9837EB29E397A000C1E218 /* ResultScreenUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2D657B2229E1B425009354E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D657B2429E1B425009354E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D9837E729E3097700C1E218 /* BillScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillScreenUI.swift; sourceTree = "<group>"; };
+		2D9837E929E3963900C1E218 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		2D9837EB29E397A000C1E218 /* ResultScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreenUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,9 @@
 				2D657B1629E1B422009354E9 /* AppDelegate.swift */,
 				2D657B1829E1B422009354E9 /* SceneDelegate.swift */,
 				2D657B1A29E1B422009354E9 /* BillViewController.swift */,
+				2D9837E929E3963900C1E218 /* ResultViewController.swift */,
 				2D9837E729E3097700C1E218 /* BillScreenUI.swift */,
+				2D9837EB29E397A000C1E218 /* ResultScreenUI.swift */,
 				2D657B1F29E1B425009354E9 /* Assets.xcassets */,
 				2D657B2129E1B425009354E9 /* LaunchScreen.storyboard */,
 				2D657B2429E1B425009354E9 /* Info.plist */,
@@ -137,9 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D9837EA29E3963900C1E218 /* ResultViewController.swift in Sources */,
 				2D657B1B29E1B422009354E9 /* BillViewController.swift in Sources */,
 				2D657B1729E1B422009354E9 /* AppDelegate.swift in Sources */,
 				2D9837E829E3097700C1E218 /* BillScreenUI.swift in Sources */,
+				2D9837EC29E397A000C1E218 /* ResultScreenUI.swift in Sources */,
 				2D657B1929E1B422009354E9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
