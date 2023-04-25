@@ -39,7 +39,7 @@
                                                 <rect key="frame" x="50" y="0.0" width="250" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrT-gj-vxe">
                                                 <rect key="frame" x="310" y="0.99999999999999645" width="40" height="38.333333333333329"/>
@@ -50,6 +50,9 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F5v-7H-JAi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -84,7 +87,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lodon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGT-3d-YUC" userLabel="City Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lodon" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGT-3d-YUC" userLabel="City Label">
                                         <rect key="frame" x="268.33333333333331" y="309.66666666666669" width="81.666666666666686" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
@@ -112,6 +115,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="bGT-3d-YUC" id="TrI-Qr-izf"/>
                         <outlet property="conditionImageView" destination="FJk-Te-qWW" id="7Nb-aI-WNg"/>
+                        <outlet property="searchTextField" destination="W6t-6i-wwH" id="wxe-Fl-xzF"/>
                         <outlet property="tempValueLabel" destination="jdT-xA-R60" id="tua-fE-ULq"/>
                     </connections>
                 </viewController>
@@ -122,9 +126,9 @@
     </scenes>
     <resources>
         <image name="background" width="662" height="662"/>
-        <image name="location.circle.fill" catalog="system" width="32" height="32"/>
-        <image name="magnifyingglass" catalog="system" width="32" height="32"/>
-        <image name="sun.max" catalog="system" width="32" height="32"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="sun.max" catalog="system" width="128" height="125"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

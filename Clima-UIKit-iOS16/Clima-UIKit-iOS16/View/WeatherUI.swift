@@ -34,6 +34,8 @@ class WeatherUI {
         tf.minimumFontSize = 12
         tf.backgroundColor = .systemFill
         tf.borderStyle     = .roundedRect
+        tf.autocapitalizationType = .words
+        tf.returnKeyType = .go
         return tf
     }()
     

@@ -7,15 +7,41 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, UITextFieldDelegate {
 
     let wthrUI = WeatherUI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
+        configUI()
+        
+        wthrUI.searchTextField.delegate = self
     }
-
+    
+    @objc func searchButtonPressed(_ sender:UIButton){
+        print("A7A")
+        wthrUI.searchTextField.endEditing(true)
+        print(wthrUI.searchTextField.text!)
+        wthrUI.searchTextField.text = ""
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        wthrUI.searchTextField.endEditing(true)
+        print(wthrUI.searchTextField.text!)
+        wthrUI.searchTextField.text = ""
+        return true
+    }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "Type Someting ... "
+            return false
+        }
+    }
 
 }
 
@@ -24,6 +50,11 @@ class WeatherViewController: UIViewController {
 
 
 extension WeatherViewController {
+    
+    func configUI() {
+        wthrUI.searchButton.addTarget(self, action: #selector(searchButtonPressed), for: .touchUpInside)
+    }
+    
     func setUI(){
         view.addSubview(wthrUI.bGImage)
         view.addSubview(wthrUI.locationButton)
