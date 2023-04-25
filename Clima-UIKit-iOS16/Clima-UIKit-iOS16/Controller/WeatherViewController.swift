@@ -19,6 +19,10 @@ class WeatherViewController: UIViewController {
 
 }
 
+
+
+
+
 extension WeatherViewController {
     func setUI(){
         view.addSubview(wthrUI.bGImage)

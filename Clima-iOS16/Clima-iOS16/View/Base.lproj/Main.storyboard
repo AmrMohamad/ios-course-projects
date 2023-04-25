@@ -109,6 +109,11 @@
                             <constraint firstAttribute="trailing" secondItem="1dD-QP-ZQp" secondAttribute="trailing" id="mpO-eY-1L2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="bGT-3d-YUC" id="TrI-Qr-izf"/>
+                        <outlet property="conditionImageView" destination="FJk-Te-qWW" id="7Nb-aI-WNg"/>
+                        <outlet property="tempValueLabel" destination="jdT-xA-R60" id="tua-fE-ULq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,10 +121,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="1377" height="1377"/>
-        <image name="location.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="sun.max" catalog="system" width="128" height="125"/>
+        <image name="background" width="662" height="662"/>
+        <image name="location.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="magnifyingglass" catalog="system" width="32" height="32"/>
+        <image name="sun.max" catalog="system" width="32" height="32"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

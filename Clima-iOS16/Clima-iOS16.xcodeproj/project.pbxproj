@@ -13,8 +13,6 @@
 		2D388D3929F589B900010ABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D388D3729F589B900010ABE /* Main.storyboard */; };
 		2D388D3B29F589BB00010ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D388D3A29F589BB00010ABE /* Assets.xcassets */; };
 		2D388D3E29F589BB00010ABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D388D3C29F589BB00010ABE /* LaunchScreen.storyboard */; };
-		2D388D6729F58E5D00010ABE /* dark_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2D388D6529F58E5A00010ABE /* dark_background.pdf */; };
-		2D388D6829F58E5D00010ABE /* light_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2D388D6629F58E5C00010ABE /* light_background.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +24,6 @@
 		2D388D3A29F589BB00010ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D388D3D29F589BB00010ABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D388D3F29F589BB00010ABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D388D6529F58E5A00010ABE /* dark_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dark_background.pdf; sourceTree = "<group>"; };
-		2D388D6629F58E5C00010ABE /* light_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = light_background.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +64,6 @@
 				2D388D3A29F589BB00010ABE /* Assets.xcassets */,
 				2D388D3C29F589BB00010ABE /* LaunchScreen.storyboard */,
 				2D388D3F29F589BB00010ABE /* Info.plist */,
-				2D388D6529F58E5A00010ABE /* dark_background.pdf */,
-				2D388D6629F58E5C00010ABE /* light_background.pdf */,
 			);
 			path = "Clima-iOS16";
 			sourceTree = "<group>";
@@ -155,8 +149,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D388D6829F58E5D00010ABE /* light_background.pdf in Resources */,
-				2D388D6729F58E5D00010ABE /* dark_background.pdf in Resources */,
 				2D388D3E29F589BB00010ABE /* LaunchScreen.storyboard in Resources */,
 				2D388D3B29F589BB00010ABE /* Assets.xcassets in Resources */,
 				2D388D3929F589B900010ABE /* Main.storyboard in Resources */,
