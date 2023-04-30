@@ -7,9 +7,11 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate {
+class WeatherViewController: UIViewController, UITextFieldDelegate,WeatherManagerDelegate {
 
     let wthrUI = WeatherUI()
+    
+    var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,19 +20,20 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         configUI()
         
         wthrUI.searchTextField.delegate = self
+        weatherManager.delegate = self
     }
     
     @objc func searchButtonPressed(_ sender:UIButton){
         print("A7A")
         wthrUI.searchTextField.endEditing(true)
-        print(wthrUI.searchTextField.text!)
+        weatherManager.fetchWeather(cityName: wthrUI.searchTextField.text!)
         wthrUI.searchTextField.text = ""
         
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         wthrUI.searchTextField.endEditing(true)
-        print(wthrUI.searchTextField.text!)
+        weatherManager.fetchWeather(cityName: wthrUI.searchTextField.text!)
         wthrUI.searchTextField.text = ""
         return true
     }
@@ -43,6 +46,12 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    func didUpdateWeather(weather: WeatherModel) {
+        print(weather.temperature)
+        print(weather.cityName)
+        print(weather.conditionId)
+    }
+    
 }
 
 
