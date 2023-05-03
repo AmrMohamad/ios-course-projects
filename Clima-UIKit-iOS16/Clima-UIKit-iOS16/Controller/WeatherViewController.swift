@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WeatherViewController: UIViewController, UITextFieldDelegate,WeatherManagerDelegate {
+class WeatherViewController: UIViewController {
 
     let wthrUI = WeatherUI()
     
-    var weatherManager = WeatherManager()
+    var weatherManager  = WeatherManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,38 +22,23 @@ class WeatherViewController: UIViewController, UITextFieldDelegate,WeatherManage
         configUI()
         
         wthrUI.searchTextField.delegate = self
-        weatherManager.delegate = self
+        weatherManager.delegate         = self
+        locationManager.delegate        = self
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
     
     @objc func searchButtonPressed(_ sender:UIButton){
-        print("A7A")
         wthrUI.searchTextField.endEditing(true)
         weatherManager.fetchWeather(cityName: wthrUI.searchTextField.text!)
         wthrUI.searchTextField.text = ""
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        wthrUI.searchTextField.endEditing(true)
-        weatherManager.fetchWeather(cityName: wthrUI.searchTextField.text!)
-        wthrUI.searchTextField.text = ""
-        return true
+    @objc func locationButtonPressed(_ sender:UIButton){
+        locationManager.requestLocation()
     }
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != "" {
-            return true
-        } else {
-            textField.placeholder = "Type Someting ... "
-            return false
-        }
-    }
-
-    func didUpdateWeather(weather: WeatherModel) {
-        print(weather.temperature)
-        print(weather.cityName)
-        print(weather.conditionId)
-    }
-    
 }
 
 
@@ -62,6 +49,7 @@ extension WeatherViewController {
     
     func configUI() {
         wthrUI.searchButton.addTarget(self, action: #selector(searchButtonPressed), for: .touchUpInside)
+        wthrUI.locationButton.addTarget(self, action: #selector(locationButtonPressed), for: .touchUpInside)
     }
     
     func setUI(){
@@ -133,5 +121,52 @@ extension WeatherViewController {
         NSLayoutConstraint.activate(dgreeSignLabelConstrains)
         NSLayoutConstraint.activate(dgreeValueLabelConstrains)
         NSLayoutConstraint.activate(cityLabelConstrains)
+    }
+}
+
+
+extension WeatherViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        wthrUI.searchTextField.endEditing(true)
+        weatherManager.fetchWeather(cityName: wthrUI.searchTextField.text!)
+        wthrUI.searchTextField.text = ""
+        return true
+    }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            return true
+        } else {
+            textField.placeholder = "Type Someting ... "
+            return false
+        }
+    }
+}
+
+extension WeatherViewController: WeatherManagerDelegate {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        DispatchQueue.main.async {
+            self.wthrUI.dgreeValueLabel.text = weather.temperatureString
+            self.wthrUI.conditionImage.image = UIImage(systemName: weather.conditionName)
+            self.wthrUI.cityLabel.text       = weather.cityName
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+}
+
+extension WeatherViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            let lon = location.coordinate.longitude
+            let lat = location.coordinate.latitude
+            weatherManager.fetchWeather(latitude: lat, longitude: lon)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 }

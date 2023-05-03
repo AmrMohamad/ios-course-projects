@@ -131,4 +131,8 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+# sensitive data
+Clima-UIKit-iOS16/Clima-UIKit-iOS16/Constants.swift
+Clima-iOS16/Clima-iOS16/Constants.swift
+
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swift,macos
