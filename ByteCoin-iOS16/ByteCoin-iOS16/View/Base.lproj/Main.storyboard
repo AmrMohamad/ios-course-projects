@@ -96,10 +96,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6nH-5y-6c3" secondAttribute="trailing" id="vZv-GI-6Pk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bitcoinValueLabel" destination="ZMZ-1L-pVJ" id="zGt-Y2-8FT"/>
+                        <outlet property="currencyLabel" destination="S0z-mG-lHw" id="8Or-cl-I7w"/>
+                        <outlet property="currencyPicker" destination="mud-Fj-REH" id="9oa-6n-QSf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130.43478260869566" y="-28.794642857142854"/>
+            <point key="canvasLocation" x="580" y="-24"/>
         </scene>
     </scenes>
     <resources>
