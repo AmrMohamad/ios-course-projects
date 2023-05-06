@@ -7,16 +7,31 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CoinManagerDelegate {
 
     let ui = CoinUI()
+    
+    var coinManager = CoinManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUI()
+        ui.picker.delegate   = self
+        ui.picker.dataSource = self
+        coinManager.delegate = self
     }
 
 
+    func didUpdatePriceExchangeRate(priceData: CoinModel) {
+        DispatchQueue.main.async {
+            self.ui.valueLabel.text    = String(format: "%.2f", priceData.priceExchangeRate)
+            self.ui.currencyLabel.text = priceData.currency
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
 }
 
 extension MainViewController {
@@ -25,7 +40,7 @@ extension MainViewController {
         
         view.addSubview(ui.picker)
         let pickerConstrains = [
-            ui.picker.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 30),
+            ui.picker.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             ui.picker.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             ui.picker.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             ui.picker.heightAnchor.constraint(equalToConstant: 216)
@@ -89,5 +104,24 @@ extension MainViewController {
         NSLayoutConstraint.activate(stackCoinViewConstrains)
         NSLayoutConstraint.activate(bitCoinImageConstrains)
 
+    }
+}
+
+
+extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return coinManager.currencyArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return coinManager.currencyArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        coinManager.getCoinPrice(for: coinManager.currencyArray[row])
     }
 }

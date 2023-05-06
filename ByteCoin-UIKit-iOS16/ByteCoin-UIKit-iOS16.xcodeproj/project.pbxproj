@@ -14,6 +14,8 @@
 		2D6911FD2A02F9AB001DF1D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6911FB2A02F9AB001DF1D5 /* LaunchScreen.storyboard */; };
 		2DA55D842A03C0950003274C /* CoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA55D832A03C0950003274C /* CoinManager.swift */; };
 		2DA55D862A03C0BB0003274C /* CoinUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA55D852A03C0BB0003274C /* CoinUI.swift */; };
+		2DC406222A06AF34008055B7 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC406212A06AF34008055B7 /* CoinModel.swift */; };
+		2DC406242A06B056008055B7 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC406232A06B056008055B7 /* CoinData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2D6911FE2A02F9AB001DF1D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DA55D832A03C0950003274C /* CoinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinManager.swift; sourceTree = "<group>"; };
 		2DA55D852A03C0BB0003274C /* CoinUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinUI.swift; sourceTree = "<group>"; };
+		2DC406212A06AF34008055B7 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		2DC406232A06B056008055B7 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				2DA55D832A03C0950003274C /* CoinManager.swift */,
+				2DC406212A06AF34008055B7 /* CoinModel.swift */,
+				2DC406232A06B056008055B7 /* CoinData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,10 +170,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC406242A06B056008055B7 /* CoinData.swift in Sources */,
 				2DA55D842A03C0950003274C /* CoinManager.swift in Sources */,
 				2D6911F52A02F9A8001DF1D5 /* MainViewController.swift in Sources */,
 				2D6911F12A02F9A8001DF1D5 /* AppDelegate.swift in Sources */,
 				2D6911F32A02F9A8001DF1D5 /* SceneDelegate.swift in Sources */,
+				2DC406222A06AF34008055B7 /* CoinModel.swift in Sources */,
 				2DA55D862A03C0BB0003274C /* CoinUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
