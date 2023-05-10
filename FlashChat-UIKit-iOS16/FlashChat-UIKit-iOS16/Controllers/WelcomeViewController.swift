@@ -15,9 +15,33 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUI()
+        
+        let titleText = ui.titleLabel.text!
+        ui.titleLabel.text = ""
+        var charIndex = 0.0
+        for letter in titleText {
+            Timer.scheduledTimer(withTimeInterval: 0.22 * charIndex, repeats: false) { (timer) in
+                self.ui.titleLabel.text?.append(letter)
+            }
+            charIndex += 1.0
+        }
+        
+        config()
     }
 
+    @objc func registerButtonPressed(_ sender:UIButton){
+        let registerVC = RegisterViewController()
+        present(registerVC, animated: true)
+    }
 
+}
+
+// MARK: - Configrations
+
+extension WelcomeViewController {
+    func config(){
+        ui.registerButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
+    }
 }
 
 // MARK: - UI Constraints
@@ -55,8 +79,13 @@ extension WelcomeViewController {
             buttonsStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ]
         
+        let buttonsConstraints = [
+            ui.registerButton.heightAnchor.constraint(equalToConstant: 61),
+            ui.loginButton.heightAnchor.constraint(equalToConstant: 61)
+        ]
         
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(buttonsStackConstraints)
+        NSLayoutConstraint.activate(buttonsConstraints)
     }
 }

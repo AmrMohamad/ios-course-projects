@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2001D52A0AA2320027ABEE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2001D42A0AA2320027ABEE /* ChatViewController.swift */; };
 		2DD646212A0A58F0002181D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD646202A0A58F0002181D1 /* RegisterViewController.swift */; };
 		2DD646242A0A6528002181D1 /* UITextFieldCustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD646232A0A6528002181D1 /* UITextFieldCustomUI.swift */; };
 		2DD6462D2A0A7564002181D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6462C2A0A7564002181D1 /* LoginViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D2001D42A0AA2320027ABEE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2DD646202A0A58F0002181D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2DD646232A0A6528002181D1 /* UITextFieldCustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldCustomUI.swift; sourceTree = "<group>"; };
 		2DD6462C2A0A7564002181D1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				2DFEDF3E2A0951CD00C0FFFF /* WelcomeViewController.swift */,
 				2DD646202A0A58F0002181D1 /* RegisterViewController.swift */,
 				2DD6462C2A0A7564002181D1 /* LoginViewController.swift */,
+				2D2001D42A0AA2320027ABEE /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				2DD6462D2A0A7564002181D1 /* LoginViewController.swift in Sources */,
 				2DFEDF3F2A0951CD00C0FFFF /* WelcomeViewController.swift in Sources */,
 				2DFEDF3B2A0951CD00C0FFFF /* AppDelegate.swift in Sources */,
+				2D2001D52A0AA2320027ABEE /* ChatViewController.swift in Sources */,
 				2DFEDF3D2A0951CD00C0FFFF /* SceneDelegate.swift in Sources */,
 				2DD646242A0A6528002181D1 /* UITextFieldCustomUI.swift in Sources */,
 				2DD646212A0A58F0002181D1 /* RegisterViewController.swift in Sources */,
