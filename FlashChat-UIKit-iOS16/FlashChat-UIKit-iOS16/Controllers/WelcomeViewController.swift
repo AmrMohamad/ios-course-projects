@@ -11,6 +11,7 @@ class WelcomeViewController: UIViewController {
     
     let ui = WelcomeUI()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,11 +28,17 @@ class WelcomeViewController: UIViewController {
         }
         
         config()
+        
     }
 
     @objc func registerButtonPressed(_ sender:UIButton){
         let registerVC = RegisterViewController()
-        present(registerVC, animated: true)
+        navigationController?.pushViewController(registerVC, animated: true)
+    }
+    
+    @objc func loginButtonPressed(_ sender:UIButton){
+        let loginVC = LoginViewController()
+        navigationController?.pushViewController(loginVC, animated: true)
     }
 
 }
@@ -41,6 +48,7 @@ class WelcomeViewController: UIViewController {
 extension WelcomeViewController {
     func config(){
         ui.registerButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
+        ui.loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
     }
 }
 
