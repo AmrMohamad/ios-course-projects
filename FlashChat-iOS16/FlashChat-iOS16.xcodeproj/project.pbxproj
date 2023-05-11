@@ -147,7 +147,6 @@
 				2DFEDF332A0951CD00C0FFFF /* Sources */,
 				2DFEDF342A0951CD00C0FFFF /* Frameworks */,
 				2DFEDF352A0951CD00C0FFFF /* Resources */,
-				145A32C069D2A277FE85F4EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,23 +204,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		145A32C069D2A277FE85F4EE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlashChat-iOS16/Pods-FlashChat-iOS16-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FlashChat-iOS16/Pods-FlashChat-iOS16-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlashChat-iOS16/Pods-FlashChat-iOS16-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D74EE8E8C0574E09B916100B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

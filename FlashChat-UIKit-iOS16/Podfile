@@ -6,7 +6,5 @@ target 'FlashChat-UIKit-iOS16' do
   use_frameworks!
 
   # Pods for FlashChat-iOS16
-  
-  pod 'CLTypingLabel'
 
 end

@@ -7,6 +7,5 @@ target 'FlashChat-iOS16' do
 
   # Pods for FlashChat-iOS16
   
-  pod 'CLTypingLabel'
 
 end
