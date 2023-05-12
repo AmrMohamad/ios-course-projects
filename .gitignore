@@ -135,5 +135,7 @@ iOSInjectionProject/
 
 *Constants.swift
 
+# FireBase
+GoogleService-Info.plist
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swift,macos
