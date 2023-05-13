@@ -127,6 +127,9 @@
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" name="BrandLightBlue"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="FKi-ho-hM1" eventType="touchUpInside" id="c9D-tt-MxG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -320,7 +323,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xv8-3Q-QNe"/>
+        <segue reference="6RG-QX-4b7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -16,9 +17,27 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setUI()
+        config()
     }
     
+    @objc func loginButtonPressed (_ sender:UIButton) {
+        if let email = ui.emailTextField.text,
+           let password = ui.passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print("===>\(e.localizedDescription)")
+                } else {
+                    self.navigationController?.pushViewController(ChatViewController(), animated: true)
+                }
+            }
+        }
+    }
+}
 
+extension LoginViewController {
+    func config () {
+        ui.loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+    }
 }
 
 extension LoginViewController {
