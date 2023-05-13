@@ -27,6 +27,7 @@ class RegiserUI {
         tf.placeholder = "Password"
         tf.textAlignment = .center
         tf.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+        tf.isSecureTextEntry = true
         return tf
     }()
     

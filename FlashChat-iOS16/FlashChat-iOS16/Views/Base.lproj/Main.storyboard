@@ -116,7 +116,7 @@
                                                 </constraints>
                                                 <color key="textColor" name="BrandBlue"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -143,7 +143,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="ndY-Uq-fYr" id="Kz8-Er-JqV"/>
                         <outlet property="passwordTextField" destination="A8A-qE-j3q" id="Ksm-q3-Mmh"/>
-                        <segue destination="jOp-xC-4va" kind="show" identifier="RegisterToChat" id="6RG-QX-4b7"/>
+                        <segue destination="jOp-xC-4va" kind="show" identifier="LoginToChat" id="6RG-QX-4b7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGu-Bs-c6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,6 +201,9 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" name="BrandBlue"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerButtonPressed:" destination="qxM-2a-P08" eventType="touchUpInside" id="wHF-Yp-wWF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -217,7 +220,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="Gv8-l4-OCY" id="Ngo-Cx-z9W"/>
                         <outlet property="passwordTextField" destination="oaS-Mh-2Yy" id="Qap-yP-N3h"/>
-                        <segue destination="jOp-xC-4va" kind="show" identifier="LoginToChat" id="Xv8-3Q-QNe"/>
+                        <segue destination="jOp-xC-4va" kind="show" identifier="RegisterToChat" id="Xv8-3Q-QNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuC-i5-jlq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

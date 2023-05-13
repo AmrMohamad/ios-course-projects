@@ -1,27 +1,20 @@
 //
-//  LoginViewController.swift
-//  FlashChat-iOS16
+//  ChatViewController.swift
+//  FlashChat-UIKit-iOS16
 //
-//  Created by Amr Mohamad on 09/05/2023.
+//  Created by Amr Mohamad on 13/05/2023.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
+class ChatViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        emailTextField.roundedTextFieldWithShadow()
-        passwordTextField.roundedTextFieldWithShadow()
+        view.backgroundColor = .systemRed
     }
-    
-    
-    
-    
     
 
     /*

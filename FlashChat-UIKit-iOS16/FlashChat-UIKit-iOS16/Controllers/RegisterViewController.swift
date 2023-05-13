@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -16,11 +17,34 @@ class RegisterViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setUI()
+        config()
     }
     
+    @objc func registerButtonPressed (_ sender:UIButton){
+        let signup = Auth.auth()
+        if let email = ui.emailTextField.text, let password = ui.passwordTextField.text {
+            signup.createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print("===>\(e.localizedDescription)")
+                } else {
+                    self.navigationController?.pushViewController(ChatViewController(), animated: true)
+                }
+            }
+        }
+    }
     
 
 }
+
+// MARK: - Configrations
+
+extension RegisterViewController {
+    func config(){
+        ui.registerButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
+    }
+}
+
+// MARK: - UI Constraints
 
 extension RegisterViewController {
     func setUI(){
