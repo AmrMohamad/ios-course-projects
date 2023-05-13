@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D12A3712A0F9B1700A3D243 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12A3702A0F9B1700A3D243 /* ChatViewController.swift */; };
+		2D12A3732A0FCE9900A3D243 /* ChatUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D12A3722A0FCE9900A3D243 /* ChatUI.swift */; };
 		2DD646262A0A6E16002181D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD646252A0A6E16002181D1 /* RegisterViewController.swift */; };
 		2DD646292A0A6E5A002181D1 /* UITextFieldCustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD646282A0A6E5A002181D1 /* UITextFieldCustomUI.swift */; };
 		2DD6462B2A0A6E86002181D1 /* RegiserUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6462A2A0A6E86002181D1 /* RegiserUI.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		2D12A3702A0F9B1700A3D243 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		2D12A3722A0FCE9900A3D243 /* ChatUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUI.swift; sourceTree = "<group>"; };
 		2DD646252A0A6E16002181D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2DD646282A0A6E5A002181D1 /* UITextFieldCustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldCustomUI.swift; sourceTree = "<group>"; };
 		2DD6462A2A0A6E86002181D1 /* RegiserUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegiserUI.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				2DFBFA2C2A0A48A200D3B7BD /* WelcomeUI.swift */,
 				2DD6462A2A0A6E86002181D1 /* RegiserUI.swift */,
 				2DD646302A0A793C002181D1 /* LoginUI.swift */,
+				2D12A3722A0FCE9900A3D243 /* ChatUI.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D12A3732A0FCE9900A3D243 /* ChatUI.swift in Sources */,
 				2DD6462B2A0A6E86002181D1 /* RegiserUI.swift in Sources */,
 				2DFBFA2D2A0A48A200D3B7BD /* WelcomeUI.swift in Sources */,
 				2DD646262A0A6E16002181D1 /* RegisterViewController.swift in Sources */,

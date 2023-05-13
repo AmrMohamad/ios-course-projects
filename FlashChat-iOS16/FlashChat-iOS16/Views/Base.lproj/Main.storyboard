@@ -297,7 +297,13 @@
                             <constraint firstItem="dx2-5h-6rF" firstAttribute="trailing" secondItem="va1-c2-E9J" secondAttribute="trailing" id="byY-Le-Gb8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Yl8-FB-Oaj"/>
+                    <navigationItem key="navigationItem" id="Yl8-FB-Oaj">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="PSb-v5-dfC">
+                            <connections>
+                                <action selector="logOutButtonPressed:" destination="jOp-xC-4va" id="Of8-bR-sFO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vl-Og-1fi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
