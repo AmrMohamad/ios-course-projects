@@ -12,11 +12,12 @@ class LoginUI {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.backgroundColor = .systemBackground
-        tf.roundedTextFieldWithShadow()
+        tf.roundedTextFieldWithShadow(cornerRadius: 30.0)
         tf.placeholder = "Email"
         tf.textAlignment = .center
         tf.textColor = UIColor(named: "BrandBlue")
         tf.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+        tf.text = "1@2.com"
         return tf
     }()
     
@@ -24,11 +25,13 @@ class LoginUI {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.backgroundColor = .systemBackground
-        tf.roundedTextFieldWithShadow()
+        tf.roundedTextFieldWithShadow(cornerRadius: 30.0)
         tf.placeholder = "Password"
         tf.textAlignment = .center
         tf.textColor = UIColor(named: "BrandBlue")
         tf.font = UIFont.systemFont(ofSize: 25, weight: .regular)
+        tf.isSecureTextEntry = true
+        tf.text = "123456"
         return tf
     }()
     

@@ -9,8 +9,8 @@ import UIKit
 
 
 extension UITextField {
-    func roundedTextFieldWithShadow(){
-     self.layer.cornerRadius = 30.0
+    func roundedTextFieldWithShadow(cornerRadius: CGFloat){
+     self.layer.cornerRadius = cornerRadius
      self.layer.shadowOffset = CGSize(width: 0.0, height: 16.0)
      self.layer.shadowOpacity = 0.15
      self.layer.shadowRadius = 10.0

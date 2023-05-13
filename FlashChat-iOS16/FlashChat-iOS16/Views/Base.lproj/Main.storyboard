@@ -256,7 +256,7 @@
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-hr-CQa">
-                                        <rect key="frame" x="20" y="20" width="333" height="40"/>
+                                        <rect key="frame" x="20" y="20" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="oMO-Gh-O52"/>
                                         </constraints>
@@ -265,9 +265,9 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEU-ib-N0Y">
-                                        <rect key="frame" x="373" y="20" width="21" height="40"/>
+                                        <rect key="frame" x="354" y="20" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="M80-BC-nGj"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="M80-BC-nGj"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xcw-ox-IOI"/>
                                         </constraints>
                                         <color key="tintColor" name="BrandLightPurple"/>
