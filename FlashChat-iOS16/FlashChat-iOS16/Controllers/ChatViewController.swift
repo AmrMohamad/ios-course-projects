@@ -10,10 +10,20 @@ import FirebaseAuth
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var chatTableView: UITableView!
+    
+    let messages: [Message] = [
+        Message(sender: "1@2.com", body: "a7a"),
+        Message(sender: "2@2.com", body: "A7A"),
+        Message(sender: "1@2.com", body: "Tested")
+    ]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
+        title = Constants.appName
+        chatTableView.dataSource = self
     }
     
     @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem){
@@ -24,15 +34,21 @@ class ChatViewController: UIViewController {
             print(error)
         }
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+// MARK: - assigning data to table
+
+extension ChatViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier,
+                                                 for: indexPath)
+        cell.textLabel?.text = messages[indexPath.row].body
+        return cell
+    }
+    
+    
 }

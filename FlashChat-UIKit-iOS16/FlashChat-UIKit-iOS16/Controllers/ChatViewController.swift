@@ -13,6 +13,12 @@ class ChatViewController: UIViewController {
 
     let ui = ChatUI()
     
+    let messages: [Message] = [
+        Message(sender: "1@2.com", body: "a7a"),
+        Message(sender: "2@2.com", body: "A7Aknvdklsnfklnlkdsnlkgnlkgnlkafnglkfangklanklgnlkasn"),
+        Message(sender: "1@2.com", body: "Testeddsjkbfklsdbvlkdbslkvbslkbvlksdbglkdsbglkbsdalkgbslkdbglksdblkgsbalkbslkabg")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -87,8 +93,9 @@ extension ChatViewController {
         // add the tableview
         let chatTableView: UITableView = {
             let tableView = UITableView()
-            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "chatCell")
+            tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.indentifier)
             tableView.translatesAutoresizingMaskIntoConstraints = false
+            tableView.separatorStyle = .none
             return tableView
         }()
         view.addSubview(chatTableView)
@@ -114,11 +121,13 @@ extension ChatViewController {
 
 extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.indentifier, for: indexPath) as! MessageTableViewCell
+        cell.messageLabel.text = messages[indexPath.row].body
+        cell.selectionStyle = .none
         return cell
     }
     
