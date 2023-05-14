@@ -35,7 +35,7 @@ class RegiserUI {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Register", for: .normal)
-        button.setTitleColor(UIColor(named: "BrandBlue"), for: .normal)
+        button.setTitleColor(UIColor(named: Constants.BrandColors.blue), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .regular)
         return button
     }()

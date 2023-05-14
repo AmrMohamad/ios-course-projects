@@ -42,7 +42,7 @@ extension LoginViewController {
 
 extension LoginViewController {
     func setUI(){
-        view.backgroundColor = UIColor(named: "BrandBlue")
+        view.backgroundColor = UIColor(named: Constants.BrandColors.blue)
         
         let textFieldsStack = UIStackView(
             arrangedSubviews: [

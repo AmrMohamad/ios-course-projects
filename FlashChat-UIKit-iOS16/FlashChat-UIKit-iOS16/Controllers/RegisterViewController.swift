@@ -48,7 +48,7 @@ extension RegisterViewController {
 
 extension RegisterViewController {
     func setUI(){
-        view.backgroundColor = UIColor(named: "BrandLightBlue")
+        view.backgroundColor = UIColor(named: Constants.BrandColors.lighBlue)
         
         let textFieldsStack = UIStackView(
             arrangedSubviews: [

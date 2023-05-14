@@ -11,8 +11,8 @@ class WelcomeUI {
     let titleLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "⚡️FlashChat"
-        label.textColor = UIColor(named: "BrandBlue")
+        label.text = Constants.appName
+        label.textColor = UIColor(named: Constants.BrandColors.blue)
         label.font = UIFont.systemFont(ofSize: 50, weight: .black)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 25
@@ -24,9 +24,9 @@ class WelcomeUI {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Register", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .regular)
-        button.setTitleColor(UIColor(named: "BrandBlue"), for: .normal)
+        button.setTitleColor(UIColor(named: Constants.BrandColors.blue), for: .normal)
         button.setTitleShadowColor(.black, for: .normal)
-        button.backgroundColor = UIColor(named: "BrandLightBlue")
+        button.backgroundColor = UIColor(named: Constants.BrandColors.lighBlue)
         return button
     }()
     

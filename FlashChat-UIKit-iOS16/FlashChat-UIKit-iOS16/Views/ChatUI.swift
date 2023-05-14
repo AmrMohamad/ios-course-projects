@@ -19,7 +19,7 @@ class ChatUI {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "paperplane.fill"), for: .normal)
-        button.tintColor = UIColor(named: "BrandLightPurple")
+        button.tintColor = UIColor(named: Constants.BrandColors.lightPurple)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         return button
     }()
@@ -30,7 +30,7 @@ class ChatUI {
         tf.backgroundColor = .systemBackground
         tf.placeholder = "Write a message..."
         tf.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        tf.textColor = UIColor(named: "BrandPurple")
+        tf.textColor = UIColor(named: Constants.BrandColors.purple)
         tf.roundedTextFieldWithShadow(cornerRadius: 10.0)
         return tf
     }()

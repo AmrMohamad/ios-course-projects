@@ -17,7 +17,7 @@ class WelcomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUI()
         
-        let titleText = ui.titleLabel.text!
+        let titleText = Constants.appName
         ui.titleLabel.text = ""
         var charIndex = 0.0
         for letter in titleText {

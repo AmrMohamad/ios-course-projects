@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2D2001D52A0AA2320027ABEE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2001D42A0AA2320027ABEE /* ChatViewController.swift */; };
+		2D31AEF72A1115FC0025F88A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D31AEF62A1115FC0025F88A /* Constants.swift */; };
 		2DD646212A0A58F0002181D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD646202A0A58F0002181D1 /* RegisterViewController.swift */; };
 		2DD646242A0A6528002181D1 /* UITextFieldCustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD646232A0A6528002181D1 /* UITextFieldCustomUI.swift */; };
 		2DD6462D2A0A7564002181D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD6462C2A0A7564002181D1 /* LoginViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		05A5F9AC5B768E69E9585A3B /* Pods-FlashChat-iOS16.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashChat-iOS16.debug.xcconfig"; path = "Target Support Files/Pods-FlashChat-iOS16/Pods-FlashChat-iOS16.debug.xcconfig"; sourceTree = "<group>"; };
 		2D2001D42A0AA2320027ABEE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		2D31AEF62A1115FC0025F88A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DD646202A0A58F0002181D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2DD646232A0A6528002181D1 /* UITextFieldCustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldCustomUI.swift; sourceTree = "<group>"; };
 		2DD6462C2A0A7564002181D1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				2DFEDF3A2A0951CD00C0FFFF /* AppDelegate.swift */,
 				2DFEDF3C2A0951CD00C0FFFF /* SceneDelegate.swift */,
+				2D31AEF62A1115FC0025F88A /* Constants.swift */,
 				2DFEDF6E2A09522400C0FFFF /* Models */,
 				2DFEDF6F2A09523200C0FFFF /* Views */,
 				2DFEDF702A09524300C0FFFF /* Controllers */,
@@ -261,6 +264,7 @@
 				2DFEDF3D2A0951CD00C0FFFF /* SceneDelegate.swift in Sources */,
 				2DD646242A0A6528002181D1 /* UITextFieldCustomUI.swift in Sources */,
 				2DD646212A0A58F0002181D1 /* RegisterViewController.swift in Sources */,
+				2D31AEF72A1115FC0025F88A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

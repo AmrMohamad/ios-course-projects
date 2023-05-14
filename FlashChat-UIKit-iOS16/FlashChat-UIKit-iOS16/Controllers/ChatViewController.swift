@@ -44,9 +44,9 @@ extension ChatViewController {
 extension ChatViewController {
     func setUI () {
         // background color
-        view.backgroundColor = UIColor(named: "BrandPurple")
+        view.backgroundColor = UIColor(named: Constants.BrandColors.purple)
         // navgiation bar items
-        title = "⚡️FlashChat"
+        title = Constants.appName
         navigationItem.style = .navigator
         navigationItem.largeTitleDisplayMode = .automatic
         navigationItem.hidesBackButton = true
