@@ -263,6 +263,9 @@
                                         <color key="tintColor" name="BrandLightPurple"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="jOp-xC-4va" eventType="touchUpInside" id="zou-tY-Wsa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -296,6 +299,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chatTableView" destination="cCY-su-DFa" id="jE8-i0-jfb"/>
+                        <outlet property="writingMessageTextField" destination="5Tj-hr-CQa" id="Qdz-xW-bAE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vl-Og-1fi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

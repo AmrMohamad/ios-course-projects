@@ -7,10 +7,14 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ChatViewController: UIViewController {
 
+    @IBOutlet weak var writingMessageTextField: UITextField!
     @IBOutlet weak var chatTableView: UITableView!
+    
+    let db = Firestore.firestore()
     
     let messages: [Message] = [
         Message(sender: "1@2.com", body: "a7a"),
@@ -27,6 +31,24 @@ class ChatViewController: UIViewController {
         
         chatTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil),
                                forCellReuseIdentifier: Constants.cellIdentifier)
+    }
+    
+    
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        if let messageBody = writingMessageTextField.text,
+           let messageSender = Auth.auth().currentUser?.email {
+            db.collection("messages")
+                .addDocument(
+                    data: ["sender":messageSender,
+                           "body":messageBody]
+                ) { error in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    } else {
+                        print("send data successfully")
+                    }
+                }
+        }
     }
     
     @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem){
