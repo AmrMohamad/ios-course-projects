@@ -33,7 +33,10 @@ class ChatViewController: UIViewController {
     
     
     func loadMessages(){
-        db.collection("messages").getDocuments { querySnapshot, error in
+        db.collection("messages")
+            .order(by: "date")
+            .addSnapshotListener { querySnapshot, error in
+            self.messages = []
             if let e = error {
                 print(e.localizedDescription)
             } else {
@@ -42,9 +45,14 @@ class ChatViewController: UIViewController {
                         let dataMessages = doc.data()
                         if let messageSender = dataMessages["sender"] as? String,
                            let messageBody = dataMessages["body"] as? String {
-                            let newMessage = Message(sender: messageSender, body: messageBody)
+                            let newMessage = Message(sender: messageSender,
+                                                     body: messageBody)
                             self.messages.append(newMessage)
-                            print(self.messages)
+                            
+                            
+                            DispatchQueue.main.async {
+                                self.chatTableView.reloadData()
+                            }
                         }
                     }
                 }
@@ -58,7 +66,8 @@ class ChatViewController: UIViewController {
             db.collection("messages")
                 .addDocument(
                     data: ["sender":messageSender,
-                           "body":messageBody]
+                           "body":messageBody,
+                           "date":Date().timeIntervalSince1970]
                 ) { error in
                     if let e = error {
                         print(e.localizedDescription)
