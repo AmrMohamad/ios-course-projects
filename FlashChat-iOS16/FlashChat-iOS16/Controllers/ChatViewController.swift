@@ -16,11 +16,7 @@ class ChatViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    let messages: [Message] = [
-        Message(sender: "1@2.com", body: "a7a"),
-        Message(sender: "2@2.com", body: "A7Aidlkfkldsflksdflkslk"),
-        Message(sender: "1@2.com", body: "Testednklvnlkasnf;lnlc fs flknhflkdlkf bsilafhsjco;i;ashun lksncnlkndiuwefujhfmdolndlkfbdhblhdasjsnfoiewhsklfhk s,mniwnfi")
-    ]
+    var messages: [Message] = []
     
     
     override func viewDidLoad() {
@@ -31,8 +27,30 @@ class ChatViewController: UIViewController {
         
         chatTableView.register(UINib(nibName: Constants.cellNibName, bundle: nil),
                                forCellReuseIdentifier: Constants.cellIdentifier)
+        
+        loadMessages()
     }
     
+    
+    func loadMessages(){
+        db.collection("messages").getDocuments { querySnapshot, error in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                if let snapshotDoc = querySnapshot?.documents {
+                    for doc in snapshotDoc {
+                        let dataMessages = doc.data()
+                        if let messageSender = dataMessages["sender"] as? String,
+                           let messageBody = dataMessages["body"] as? String {
+                            let newMessage = Message(sender: messageSender, body: messageBody)
+                            self.messages.append(newMessage)
+                            print(self.messages)
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     @IBAction func sendButtonPressed(_ sender: UIButton) {
         if let messageBody = writingMessageTextField.text,
