@@ -18,6 +18,20 @@ class ChatViewController: UIViewController {
     
     var messages: [Message] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .black),
+            NSAttributedString.Key.foregroundColor : UIColor.white
+        ]
+        navigationController?.navigationBar.barTintColor = UIColor(named: Constants.BrandColors.blue)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.tintColor = UIColor.tintColor
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +66,11 @@ class ChatViewController: UIViewController {
                             
                             DispatchQueue.main.async {
                                 self.chatTableView.reloadData()
+                                self.chatTableView.scrollToRow(
+                                    at: IndexPath(row: self.messages.count - 1, section: 0),
+                                    at: .top,
+                                    animated: true)
+                                
                             }
                         }
                     }
@@ -73,6 +92,11 @@ class ChatViewController: UIViewController {
                         print(e.localizedDescription)
                     } else {
                         print("send data successfully")
+                        DispatchQueue.main.async {
+                            self.writingMessageTextField.text = ""
+                            
+                        }
+                        
                     }
                 }
         }
@@ -99,6 +123,20 @@ extension ChatViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier,
                                                  for: indexPath) as! MessageTableViewCell
         cell.messageLabel.text = messages[indexPath.row].body
+        let message = messages[indexPath.row]
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.BrandColors.lightPurple)
+            cell.messageLabel.textColor = UIColor(named: Constants.BrandColors.purple)
+            cell.avaterImage.isHidden = false
+            cell.avaterSecondImage.isHidden = true
+        }
+        else {
+            cell.messageBubble.backgroundColor = UIColor(named:  Constants.BrandColors.purple)
+            cell.messageLabel.textColor = UIColor(named: Constants.BrandColors.lightPurple)
+            cell.avaterImage.isHidden = true
+            cell.avaterSecondImage.isHidden = false
+        }
+        
         return cell
     }
     

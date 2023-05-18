@@ -246,7 +246,7 @@
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Tj-hr-CQa">
-                                        <rect key="frame" x="20" y="20" width="314" height="40"/>
+                                        <rect key="frame" x="20" y="15" width="314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="oMO-Gh-O52"/>
                                         </constraints>
@@ -255,7 +255,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEU-ib-N0Y">
-                                        <rect key="frame" x="354" y="20" width="40" height="40"/>
+                                        <rect key="frame" x="354" y="15" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="M80-BC-nGj"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xcw-ox-IOI"/>
@@ -269,11 +269,13 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BEU-ib-N0Y" secondAttribute="bottom" constant="5" id="5z1-sA-zHb"/>
                                     <constraint firstItem="5Tj-hr-CQa" firstAttribute="leading" secondItem="va1-c2-E9J" secondAttribute="leading" constant="20" id="Jeu-WF-sgF"/>
-                                    <constraint firstItem="BEU-ib-N0Y" firstAttribute="top" secondItem="va1-c2-E9J" secondAttribute="top" constant="20" id="MuG-Ac-T7c"/>
+                                    <constraint firstItem="BEU-ib-N0Y" firstAttribute="top" secondItem="va1-c2-E9J" secondAttribute="top" constant="15" id="MuG-Ac-T7c"/>
                                     <constraint firstAttribute="trailing" secondItem="BEU-ib-N0Y" secondAttribute="trailing" constant="20" id="Z5u-Fy-iz7"/>
-                                    <constraint firstItem="5Tj-hr-CQa" firstAttribute="top" secondItem="va1-c2-E9J" secondAttribute="top" constant="20" id="cRC-bX-G9f"/>
+                                    <constraint firstItem="5Tj-hr-CQa" firstAttribute="top" secondItem="va1-c2-E9J" secondAttribute="top" constant="15" id="cRC-bX-G9f"/>
                                     <constraint firstItem="BEU-ib-N0Y" firstAttribute="leading" secondItem="5Tj-hr-CQa" secondAttribute="trailing" constant="20" id="mad-2v-5Ig"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Tj-hr-CQa" secondAttribute="bottom" constant="5" id="q42-Pk-B9w"/>
                                     <constraint firstAttribute="height" constant="60" id="vue-8l-ALk"/>
                                 </constraints>
                             </view>
