@@ -30,7 +30,17 @@ class WelcomeViewController: UIViewController {
         config()
         
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     @objc func registerButtonPressed(_ sender:UIButton){
         let registerVC = RegisterViewController()
         navigationController?.pushViewController(registerVC, animated: true)

@@ -33,6 +33,13 @@ class MessageTableViewCell: UITableViewCell {
         return image
     }()
     
+    let avaterSecondImage: UIImageView = {
+        let image = UIImageView(image: UIImage(named: "YouAvatar"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        return image
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setConstraints()
@@ -46,6 +53,7 @@ class MessageTableViewCell: UITableViewCell {
     private func setConstraints() {
         let stack = UIStackView(
             arrangedSubviews: [
+                avaterSecondImage,
                 messageBubble,
                 avaterImage
             ]
@@ -76,9 +84,14 @@ class MessageTableViewCell: UITableViewCell {
             avaterImage.widthAnchor.constraint(equalToConstant: 40)
         ]
         
+        let avaterSecondImageConstraints = [
+            avaterSecondImage.heightAnchor.constraint(equalToConstant: 40),
+            avaterSecondImage.widthAnchor.constraint(equalToConstant: 40)
+        ]
         NSLayoutConstraint.activate(stackConstraints)
         NSLayoutConstraint.activate(messageLabelConstraints)
         NSLayoutConstraint.activate(avaterImageConstraints)
+        NSLayoutConstraint.activate(avaterSecondImageConstraints)
     }
 }
 

@@ -11,7 +11,8 @@ struct Constants {
     static let appName        = "⚡️FlashChat"
     static let loginToChat    = "LoginToChat"
     static let registerToChat = "RegisterToChat"
-    static let cellNibName = "MessageCell"
+    static let cellNibName = "MessageTableViewCell"
+    static let cellIdentifier = "ReusableCell"
     
     struct BrandColors {
         static let purple = "BrandPurple"
