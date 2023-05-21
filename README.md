@@ -60,6 +60,19 @@ This document serves as a record of my progress as I learn iOS development throu
 
   </details>
 
+- **FlashChat**: A messaging app that allows users to send and receieve text messages in real-time .
+  <details>
+    <summary>Objectives</summary>
+
+    - Using and Dealing with iOS Navigation Controller.
+    - Using Third-Party libraries/packages using Cocoapods and Swift Package Manager.
+    - Using FireBase Firestore as Cloud Database.
+    - Using Firebase Authentication.
+    - iOS TableViews
+    - create custom UI with .xib files
+
+  </details>
+
 ## In Progress Projects
 
 ## Resources
