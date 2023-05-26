@@ -11,6 +11,9 @@
 		2D33463F2A2518EE008EBDC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33463E2A2518EE008EBDC4 /* ContentView.swift */; };
 		2D3346412A2518F0008EBDC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3346402A2518F0008EBDC4 /* Assets.xcassets */; };
 		2D3346442A2518F0008EBDC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3346432A2518F0008EBDC4 /* Preview Assets.xcassets */; };
+		2DD0EED52A261AB40039D4D5 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0EED42A261AB40039D4D5 /* DancingScript-VariableFont_wght.ttf */; };
+		2DD0EED72A261B530039D4D5 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0EED62A261B530039D4D5 /* DancingScript-Regular.ttf */; };
+		2DD0EED92A261DEA0039D4D5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0EED82A261DEA0039D4D5 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		2D33463E2A2518EE008EBDC4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2D3346402A2518F0008EBDC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D3346432A2518F0008EBDC4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2DD0EED32A260F6E0039D4D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2DD0EED42A261AB40039D4D5 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		2DD0EED62A261B530039D4D5 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Regular.ttf"; sourceTree = "<group>"; };
+		2DD0EED82A261DEA0039D4D5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +58,13 @@
 		2D33463B2A2518EE008EBDC4 /* AmrCard-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				2DD0EED32A260F6E0039D4D5 /* Info.plist */,
 				2D33463C2A2518EE008EBDC4 /* AmrCard_SwiftUIApp.swift */,
 				2D33463E2A2518EE008EBDC4 /* ContentView.swift */,
 				2D3346402A2518F0008EBDC4 /* Assets.xcassets */,
+				2DD0EED02A260DE80039D4D5 /* Fonts */,
 				2D3346422A2518F0008EBDC4 /* Preview Content */,
+				2DD0EED82A261DEA0039D4D5 /* InfoView.swift */,
 			);
 			path = "AmrCard-SwiftUI";
 			sourceTree = "<group>";
@@ -65,6 +75,15 @@
 				2D3346432A2518F0008EBDC4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2DD0EED02A260DE80039D4D5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2DD0EED42A261AB40039D4D5 /* DancingScript-VariableFont_wght.ttf */,
+				2DD0EED62A261B530039D4D5 /* DancingScript-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +144,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD0EED52A261AB40039D4D5 /* DancingScript-VariableFont_wght.ttf in Resources */,
+				2DD0EED72A261B530039D4D5 /* DancingScript-Regular.ttf in Resources */,
 				2D3346442A2518F0008EBDC4 /* Preview Assets.xcassets in Resources */,
 				2D3346412A2518F0008EBDC4 /* Assets.xcassets in Resources */,
 			);
@@ -138,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D33463F2A2518EE008EBDC4 /* ContentView.swift in Sources */,
+				2DD0EED92A261DEA0039D4D5 /* InfoView.swift in Sources */,
 				2D33463D2A2518EE008EBDC4 /* AmrCard_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +291,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AmrCard-SwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AmrCard-SwiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +320,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"AmrCard-SwiftUI/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AmrCard-SwiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
