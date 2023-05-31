@@ -8,16 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationStack{
-            List {
-                Text("aa")
-                Text("aa")
-                Text("aa")
-                Text("aa")
-                Text("aa")
-                Text("aa")
-                
+            List(posts){ post in
+                Text(post.title)
             }
             .navigationTitle("HACKER NEWS")
             .listStyle(.plain)
@@ -30,3 +25,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
