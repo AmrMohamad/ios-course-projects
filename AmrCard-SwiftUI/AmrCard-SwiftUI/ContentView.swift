@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  AmrCard-SwiftUI
 //
-//  Created by AmrMohamad on 29/05/2023.
+//  Created by Amr Mohamad on 29/05/2023.
 //
 
 import SwiftUI
