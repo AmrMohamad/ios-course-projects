@@ -34,9 +34,6 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" backgroundImage="location.circle.fill" catalog="system"/>
-                                                <connections>
-                                                    <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="98V-qV-NKc"/>
-                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="W6t-6i-wwH">
                                                 <rect key="frame" x="50" y="0.0" width="274" height="40"/>
@@ -53,9 +50,6 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
-                                                <connections>
-                                                    <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F5v-7H-JAi"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -115,12 +109,6 @@
                             <constraint firstAttribute="trailing" secondItem="1dD-QP-ZQp" secondAttribute="trailing" id="mpO-eY-1L2"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="cityLabel" destination="bGT-3d-YUC" id="TrI-Qr-izf"/>
-                        <outlet property="conditionImageView" destination="FJk-Te-qWW" id="7Nb-aI-WNg"/>
-                        <outlet property="searchTextField" destination="W6t-6i-wwH" id="wxe-Fl-xzF"/>
-                        <outlet property="tempValueLabel" destination="jdT-xA-R60" id="tua-fE-ULq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
