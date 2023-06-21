@@ -56,12 +56,36 @@
 			children = (
 				2D8DEABC2A3F301D00932B89 /* AppDelegate.swift */,
 				2D8DEABE2A3F301D00932B89 /* SceneDelegate.swift */,
-				2D8DEAC02A3F301D00932B89 /* TodoListViewController.swift */,
+				2DEB0ED72A472431007CE433 /* Models */,
+				2DEB0ED82A472431007CE433 /* Views */,
+				2DEB0ED62A472431007CE433 /* Controllers */,
 				2D8DEAC52A3F301E00932B89 /* Assets.xcassets */,
 				2D8DEAC72A3F301E00932B89 /* LaunchScreen.storyboard */,
 				2D8DEACA2A3F301E00932B89 /* Info.plist */,
 			);
 			path = "Todoey-UIKit-iOS16";
+			sourceTree = "<group>";
+		};
+		2DEB0ED62A472431007CE433 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2D8DEAC02A3F301D00932B89 /* TodoListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2DEB0ED72A472431007CE433 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2DEB0ED82A472431007CE433 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
