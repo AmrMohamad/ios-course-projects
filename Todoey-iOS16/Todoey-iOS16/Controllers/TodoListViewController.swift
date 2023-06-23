@@ -9,11 +9,16 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     
-    var itemArray = ["Apples","Eggs","Milk"]
+    var itemArray = [TodoItem]()
+    let dataPath  = FileManager
+        .default
+        .urls(for: .documentDirectory, in: .userDomainMask)
+        .first?.appending(path: "Items.plist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+       loadItems()
     }
     
     //MARK: - TableView DataSource Methods
@@ -32,7 +37,9 @@ class TodoListViewController: UITableViewController {
             .dequeueReusableCell(
                 withIdentifier: "ToDoItemCell",
                 for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row]
+        let item = itemArray[indexPath.row]
+        cell.textLabel?.text = item.title
+        cell.accessoryType = item.done ? .checkmark : .none
         return cell
     }
     
@@ -43,24 +50,16 @@ class TodoListViewController: UITableViewController {
     ) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        if tableView
-            .cellForRow(at: indexPath)?
-            .accessoryType == .checkmark {
-            tableView
-                .cellForRow(at: indexPath)?
-                .accessoryType = .none
-        } else {
-            tableView
-                .cellForRow(at: indexPath)?
-                .accessoryType = .checkmark
-        }
+        let item = itemArray[indexPath.row]
+        item.done = !item.done
+        saveData()
     }
     
     //MARK: - Add Item
     
     @IBAction func addItemPressed(_ sender: UIBarButtonItem) {
         var textfieldOfAlert = UITextField()
-        
+        let newItem = TodoItem()
         let alert = UIAlertController(
             title: "Add New ToDo Item",
             message: "",
@@ -69,9 +68,10 @@ class TodoListViewController: UITableViewController {
         
         let action = UIAlertAction(
             title: "Add Item",
-            style: .default) { action in
-                self.itemArray.append(textfieldOfAlert.text!)
-                self.tableView.reloadData()
+            style: .default) { [self] action in
+                newItem.title = textfieldOfAlert.text!
+                self.itemArray.append(newItem)
+                self.saveData()
             }
         
         alert.addTextField { alertTextField in
@@ -83,5 +83,29 @@ class TodoListViewController: UITableViewController {
         present(alert, animated: true)
     }
     
+    //MARK: - Add encoded custom data to plist file use NSCoder
+    
+    func saveData(){
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataPath!)
+        } catch {
+            print("Error with encoding \(error)")
+        }
+        self.tableView.reloadData()
+    }
+    
+    //MARK: - Add encoded custom data to plist file use NSCoder
+    func loadItems(){
+        if let data = try? Data(contentsOf: dataPath!){
+            let decoder = PropertyListDecoder()
+            do {
+                itemArray = try decoder.decode([TodoItem].self, from: data)
+            } catch {
+                print("Error with decoding \(error)")
+            }
+        }
+    }
 }
 
