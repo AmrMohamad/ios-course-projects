@@ -9,13 +9,16 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
 
-    var itemArray = ["Eggs","Apples","aa"]
+    var itemArray = [TodoItem]()
+    let dataPath  = FileManager
+        .default
+        .urls(for: .documentDirectory, in: .userDomainMask)
+        .first?.appending(path: "Items.plist")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Todoey"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        BigTitleNavgationBar(title: "Todoey")
         navigationItem
             .rightBarButtonItem = UIBarButtonItem(
                 barButtonSystemItem: .add,
@@ -24,6 +27,8 @@ class TodoListViewController: UITableViewController {
             )
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ToDoItemCell")
+        
+        loadData()
     }
 
     
@@ -34,7 +39,9 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row]
+        let item = itemArray[indexPath.row]
+        cell.textLabel?.text = item.title
+        cell.accessoryType = item.done ? .checkmark : .none
         return cell
     }
     
@@ -42,23 +49,16 @@ class TodoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if tableView
-            .cellForRow(at: indexPath)?
-            .accessoryType == .checkmark {
-            tableView
-                .cellForRow(at: indexPath)?
-                .accessoryType = .none
-        } else {
-            tableView
-                .cellForRow(at: indexPath)?
-                .accessoryType = .checkmark
-        }
+        let item = itemArray[indexPath.row]
+        item.done = !item.done
+        saveData()
     }
     
     //MARK: - Add item
     
     @objc func addItemPressed(){
         var alertOfTextField = UITextField()
+        let newItem = TodoItem()
         let alert = UIAlertController(
             title: "Add New ToDo Item",
             message: "",
@@ -72,12 +72,36 @@ class TodoListViewController: UITableViewController {
             title: "Add Item",
             style: .default
         ) { action in
-                self.itemArray.append(alertOfTextField.text!)
-                self.tableView.reloadData()
-            }
+            newItem.title = alertOfTextField.text!
+            self.itemArray.append(newItem)
+            self.saveData()
+        }
         alert.addAction(action)
         present(alert, animated: true)
     }
 
+    //MARK: - Saving/Writing Custom Data using NSCoder
+    
+    func saveData(){
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataPath!)
+        } catch {
+            print("Error with encoding data \(error)")
+        }
+        self.tableView.reloadData()
+    }
+    
+    func loadData(){
+        if let data = try? Data(contentsOf: dataPath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                itemArray = try decoder.decode([TodoItem].self, from: data)
+            } catch {
+                print("Error with Decoding \(error) ")
+            }
+        }
+    }
 }
 
