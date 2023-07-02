@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D4F6F222A8BCB18000A26C8 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F6F212A8BCB18000A26C8 /* CategoryViewController.swift */; };
 		2D8DEABD2A3F301D00932B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DEABC2A3F301D00932B89 /* AppDelegate.swift */; };
 		2D8DEABF2A3F301D00932B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DEABE2A3F301D00932B89 /* SceneDelegate.swift */; };
 		2D8DEAC12A3F301D00932B89 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8DEAC02A3F301D00932B89 /* TodoListViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D4F6F212A8BCB18000A26C8 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		2D8DEAB92A3F301D00932B89 /* Todoey-UIKit-iOS16.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Todoey-UIKit-iOS16.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8DEABC2A3F301D00932B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D8DEABE2A3F301D00932B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				2D8DEAC02A3F301D00932B89 /* TodoListViewController.swift */,
+				2D4F6F212A8BCB18000A26C8 /* CategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				2DF4EF992A4605A9008BE00D /* BigTitleNavgationBar.swift in Sources */,
 				2D8DEAC12A3F301D00932B89 /* TodoListViewController.swift in Sources */,
+				2D4F6F222A8BCB18000A26C8 /* CategoryViewController.swift in Sources */,
 				2D8DEABD2A3F301D00932B89 /* AppDelegate.swift in Sources */,
 				2DCA59C62A55D79400683669 /* DataModel.xcdatamodeld in Sources */,
 				2DF4EF972A460506008BE00D /* TodoItem.swift in Sources */,
