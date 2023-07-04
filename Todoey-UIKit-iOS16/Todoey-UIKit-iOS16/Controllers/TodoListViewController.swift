@@ -93,6 +93,9 @@ class TodoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    
+    //MARK: - Loading/Reading Custom Data using NSCoder
+    
     func loadData(){
         if let data = try? Data(contentsOf: dataPath!) {
             let decoder = PropertyListDecoder()
