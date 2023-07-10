@@ -16,7 +16,7 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//       loadItems()
+       loadItems()
     }
     
     //MARK: - TableView DataSource Methods
@@ -94,15 +94,14 @@ class TodoListViewController: UITableViewController {
     }
     
     //MARK: - Add encoded custom data to plist file use NSCoder
-//    func loadItems(){
-//        if let data = try? Data(contentsOf: dataPath!){
-//            let decoder = PropertyListDecoder()
-//            do {
-//                itemArray = try decoder.decode([TodoItem].self, from: data)
-//            } catch {
-//                print("Error with decoding \(error)")
-//            }
-//        }
-//    }
+    func loadItems(){
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print("Error with Fetching data By CoreData \(error)")
+        }
+        
+    }
 }
 
