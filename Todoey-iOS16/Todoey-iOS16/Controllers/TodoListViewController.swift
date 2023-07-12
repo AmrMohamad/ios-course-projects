@@ -86,7 +86,7 @@ class TodoListViewController: UITableViewController {
         present(alert, animated: true)
     }
     
-    //MARK: - Add encoded custom data to plist file use NSCoder
+    //MARK: - Saving data to DB by using CoreData
     
     func saveData(){
         do {
@@ -97,15 +97,37 @@ class TodoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    //MARK: - Add encoded custom data to plist file use NSCoder
-    func loadItems(){
-        let request : NSFetchRequest<Item> = Item.fetchRequest()
+    //MARK: - Reading/Loading data from DB by using CoreData
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest() ){
         do {
             itemArray = try context.fetch(request)
         } catch {
             print("Error with Fetching data By CoreData \(error)")
         }
         
+        tableView.reloadData()
     }
 }
 
+//MARK: - Search Bar Methods
+
+extension TodoListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        loadItems(with: request)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
+}
