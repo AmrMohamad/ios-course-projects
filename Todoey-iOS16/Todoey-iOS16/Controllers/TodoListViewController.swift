@@ -19,7 +19,7 @@ class TodoListViewController: UITableViewController {
        loadItems()
     }
     
-    //MARK: - TableView DataSource Methods
+//MARK: - TableView DataSource Methods
     override func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
@@ -41,7 +41,7 @@ class TodoListViewController: UITableViewController {
         return cell
     }
     
-    //MARK: - TableView Delegate Methods
+//MARK: - TableView Delegate Methods
     override func tableView(
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
@@ -57,7 +57,7 @@ class TodoListViewController: UITableViewController {
         saveData()
     }
     
-    //MARK: - Add Item
+//MARK: - Add Item
     
     @IBAction func addItemPressed(_ sender: UIBarButtonItem) {
         var textfieldOfAlert = UITextField()
@@ -86,7 +86,7 @@ class TodoListViewController: UITableViewController {
         present(alert, animated: true)
     }
     
-    //MARK: - Saving data to DB by using CoreData
+//MARK: - Saving data to DB by using CoreData
     
     func saveData(){
         do {
@@ -97,7 +97,7 @@ class TodoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    //MARK: - Reading/Loading data from DB by using CoreData
+//MARK: - Reading/Loading data from DB by using CoreData
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest() ){
         do {
             itemArray = try context.fetch(request)
