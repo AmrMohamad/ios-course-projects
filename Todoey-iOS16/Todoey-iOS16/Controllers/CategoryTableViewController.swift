@@ -6,17 +6,68 @@
 //
 
 import UIKit
+import CoreData
 
 class CategoryTableViewController: UITableViewController {
 
+    var categories = [CategoryList]()
+    let context = (
+        UIApplication
+        .shared
+        .delegate as! AppDelegate
+    ).persistentContainer
+        .viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        loadCategories()
         
     }
 
-
-    @IBAction func addCategoryButtonPressed(_ sender: UIBarButtonItem) {
-        
+    //MARK: - TableView DataSource Methods
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryOfItems", for: indexPath)
+        let category = categories[indexPath.row]
+        cell.textLabel?.text = category.name
+        return cell
     }
     
+    //MARK: - Add New Cetegories
+    @IBAction func addCategoryButtonPressed(_ sender: UIBarButtonItem) {
+        var textfieldOfAlert = UITextField()
+        let alert = UIAlertController(title: "Add New Category",
+                                      message: nil,
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(
+            title: "Add Category",
+            style: .default) { action in
+                let newCategory = CategoryList(context: self.context)
+                newCategory.name = textfieldOfAlert.text!
+                self.categories.append(newCategory)
+                self.saveData()
+        }
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "Name the new category"
+            textfieldOfAlert = alertTextField
+        }
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
+    
+    
+    //MARK: - TabView Delegate Methods
+    
+    //MARK: - Data Operations Methods
+    func saveData(){
+        do {
+            try context.save()
+        } catch {
+            print("Error Saving Data \(error)")
+        }
+        self.tableView.reloadData()
+    }
 }
