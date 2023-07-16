@@ -70,4 +70,14 @@ class CategoryTableViewController: UITableViewController {
         }
         self.tableView.reloadData()
     }
+    
+    func loadCategories(){
+        let request : NSFetchRequest<CategoryList> = CategoryList.fetchRequest()
+        do {
+            categories = try context.fetch(request)
+        } catch {
+            print("Error loading Data \(error)")
+        }
+        tableView.reloadData()
+    }
 }
