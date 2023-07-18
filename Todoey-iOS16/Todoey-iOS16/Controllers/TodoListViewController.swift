@@ -12,10 +12,11 @@ class TodoListViewController: UITableViewController {
     
     var itemArray = [Item]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var sea = ""
+    
     var selectedCategory: CategoryList? {
         didSet{
             loadItems()
+            title = selectedCategory!.name!
         }
     }
     
@@ -139,7 +140,7 @@ extension TodoListViewController: UISearchBarDelegate {
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         
         let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
-        sea = searchBar.text!
+        
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
         loadItems(with: request, predicate: predicate)
