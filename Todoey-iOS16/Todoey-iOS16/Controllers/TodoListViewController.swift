@@ -23,6 +23,11 @@ class TodoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let search = UISearchController(searchResultsController: nil)
+        search.delegate = self
+        search.searchBar.delegate = self
+        self.navigationItem.searchController = search
     }
     
 //MARK: - TableView DataSource Methods
@@ -135,7 +140,7 @@ class TodoListViewController: UITableViewController {
 
 //MARK: - Search Bar Methods
 
-extension TodoListViewController: UISearchBarDelegate {
+extension TodoListViewController: UISearchBarDelegate,UISearchControllerDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         
