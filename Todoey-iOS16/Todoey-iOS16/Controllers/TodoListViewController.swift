@@ -110,7 +110,10 @@ class TodoListViewController: UITableViewController {
     }
     
 //MARK: - Reading/Loading data from DB by using CoreData
-    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil ){
+    func loadItems(
+        with request: NSFetchRequest<Item> = Item.fetchRequest(),
+        predicate: NSPredicate? = nil
+    ){
         let categoryPredicate = NSPredicate(
             format: "parentCategory.name MATCHES %@", selectedCategory!.name!
         )
