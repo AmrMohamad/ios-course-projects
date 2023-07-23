@@ -10,12 +10,12 @@ import RealmSwift
 
 class TodoListViewController: UITableViewController {
     
-    var itemArray = [Item]()
+    var todoItems : Results<Item>?
     let realm = try! Realm()
     
     var selectedCategory: Category? {
         didSet{
-//            loadItems()
+            loadItems()
             title = selectedCategory!.name
         }
     }
@@ -35,7 +35,7 @@ class TodoListViewController: UITableViewController {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return itemArray.count
+        return todoItems?.count ?? 1
     }
     
     override func tableView(
@@ -46,9 +46,17 @@ class TodoListViewController: UITableViewController {
             .dequeueReusableCell(
                 withIdentifier: "ToDoItemCell",
                 for: indexPath)
-        let item = itemArray[indexPath.row]
-        cell.textLabel?.text = item.title
-        cell.accessoryType = item.done ? .checkmark : .none
+        
+        if let item = todoItems?[indexPath.row] {
+            
+            cell.textLabel?.text = item.title
+            cell.accessoryType = item.done ? .checkmark : .none
+            
+        } else {
+            
+            cell.textLabel?.text = "No items added yet"
+        }
+        
         return cell
     }
     
@@ -57,63 +65,73 @@ class TodoListViewController: UITableViewController {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        let item = itemArray[indexPath.row]
+//        let item = todoItems?[indexPath.row]
 //        How to Delete Items : 👇🏻
 //        context.delete(item)
 //        itemArray.remove(at: indexPath.row)
         
-        item.done = !item.done
+//        item.done = !item.done
         tableView.deselectRow(at: indexPath, animated: true)
         
-        saveData()
+//        saveData()
     }
     
 //MARK: - Add Item
     
-//    @IBAction func addItemPressed(_ sender: UIBarButtonItem) {
-//        var textfieldOfAlert = UITextField()
-//        let newItem = Item(context: self.context)
-//        let alert = UIAlertController(
-//            title: "Add New ToDo Item",
-//            message: "",
-//            preferredStyle: .alert
-//        )
-//
-//        let action = UIAlertAction(
-//            title: "Add Item",
-//            style: .default) { [self] action in
-//                newItem.title = textfieldOfAlert.text!
-//                newItem.done  = false
-//                newItem.parentCategory = self.selectedCategory
-//                self.itemArray.append(newItem)
-//                self.saveData()
-//            }
-//
-//        alert.addTextField { alertTextField in
-//            alertTextField.placeholder = "Create New Item"
-//            textfieldOfAlert = alertTextField
-//        }
-//
-//        alert.addAction(action)
-//        present(alert, animated: true)
-//    }
+    @IBAction func addItemPressed(_ sender: UIBarButtonItem) {
+        var textfieldOfAlert = UITextField()
+        
+        let alert = UIAlertController(
+            title: "Add New ToDo Item",
+            message: "",
+            preferredStyle: .alert
+        )
+
+        let action = UIAlertAction(
+            title: "Add Item",
+            style: .default) { [self] action in
+                
+                if  let currentCategory = self.selectedCategory {
+                    do {
+                        try self.realm.write{
+                            let newItem = Item()
+                            newItem.title = textfieldOfAlert.text!
+                            currentCategory.items.append(newItem)
+                        }
+                    } catch {
+                        print("Error saving with Realm \(error)")
+                    }
+                }
+                self.tableView.reloadData()
+            }
+
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "Create New Item"
+            textfieldOfAlert = alertTextField
+        }
+
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
     
 //MARK: - Saving data to DB by using CoreData
     
-    func saveData(){
-        do {
-            try context.save()
-        } catch {
-            print("Error Saving context \(error)")
-        }
-        self.tableView.reloadData()
-    }
+//    func saveData(){
+//        do {
+//            try context.save()
+//        } catch {
+//            print("Error Saving context \(error)")
+//        }
+//        self.tableView.reloadData()
+//    }
     
 //MARK: - Reading/Loading data from DB by using CoreData
-//    func loadItems(
-//        with request: NSFetchRequest<Item> = Item.fetchRequest(),
-//        predicate: NSPredicate? = nil
-//    ){
+    func loadItems(
+        
+    ){
+        todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
+        
+        tableView.reloadData()
 //        let categoryPredicate = NSPredicate(
 //            format: "parentCategory.name MATCHES %@", selectedCategory!.name!
 //        )
@@ -136,9 +154,7 @@ class TodoListViewController: UITableViewController {
 //        } catch {
 //            print("Error with Fetching data By CoreData \(error)")
 //        }
-//
-//        tableView.reloadData()
-//    }
+    }
 }
 
 //MARK: - Search Bar Methods

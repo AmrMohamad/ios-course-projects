@@ -11,28 +11,25 @@ import RealmSwift
 class CategoryTableViewController: UITableViewController {
 
     let realm = try! Realm()
-    var categories = [Category]()
-//    let context = (
-//        UIApplication
-//        .shared
-//        .delegate as! AppDelegate
-//    ).persistentContainer
-//        .viewContext
+    var categories : Results<Category>?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadCategories()
+        loadCategories()
         
     }
 
     //MARK: - TableView DataSource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        
+        return categories?.count ?? 1
+        
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryOfItems", for: indexPath)
-        let category = categories[indexPath.row]
-        cell.textLabel?.text = category.name
+         
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Category added yet"
         return cell
     }
     
@@ -47,7 +44,7 @@ class CategoryTableViewController: UITableViewController {
             style: .default) { action in
                 let newCategory = Category()
                 newCategory.name = textfieldOfAlert.text!
-                self.categories.append(newCategory)
+                
                 self.save(category: newCategory)
         }
         alert.addTextField { alertTextField in
@@ -69,7 +66,7 @@ class CategoryTableViewController: UITableViewController {
         let destinationVC = segue.destination as! TodoListViewController
         if let indexPath = tableView.indexPathForSelectedRow {
             
-            destinationVC.selectedCategory = categories[indexPath.row]
+            destinationVC.selectedCategory = categories?[indexPath.row]
             
         }
         
@@ -86,13 +83,9 @@ class CategoryTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-//    func loadCategories(){
-//        let request : NSFetchRequest<CategoryList> = CategoryList.fetchRequest()
-//        do {
-//            categories = try context.fetch(request)
-//        } catch {
-//            print("Error loading Data \(error)")
-//        }
-//        tableView.reloadData()
-//    }
+    func loadCategories(){
+        categories = realm.objects(Category.self)
+        
+        tableView.reloadData()
+    }
 }
