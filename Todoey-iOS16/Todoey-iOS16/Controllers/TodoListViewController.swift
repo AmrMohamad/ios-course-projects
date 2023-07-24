@@ -24,13 +24,13 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        let search = UISearchController(searchResultsController: nil)
-//        search.delegate = self
-//        search.searchBar.delegate = self
-//        self.navigationItem.searchController = search
+        //        let search = UISearchController(searchResultsController: nil)
+        //        search.delegate = self
+        //        search.searchBar.delegate = self
+        //        self.navigationItem.searchController = search
     }
     
-//MARK: - TableView DataSource Methods
+    //MARK: - TableView DataSource Methods
     override func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
@@ -60,23 +60,35 @@ class TodoListViewController: UITableViewController {
         return cell
     }
     
-//MARK: - TableView Delegate Methods
+    //MARK: - TableView Delegate Methods
     override func tableView(
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-//        let item = todoItems?[indexPath.row]
-//        How to Delete Items : 👇🏻
-//        context.delete(item)
-//        itemArray.remove(at: indexPath.row)
         
-//        item.done = !item.done
+        if let item = todoItems?[indexPath.row] {
+            do{
+                try realm.write({
+                    item.done = !item.done
+                })
+                
+            } catch {
+                print("Error saving \(error)")
+            }
+        }
+        tableView.reloadData()
+        //        let item = todoItems?[indexPath.row]
+        //        How to Delete Items : 👇🏻
+        //        context.delete(item)
+        //        itemArray.remove(at: indexPath.row)
+        
+        //        item.done = !item.done
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        saveData()
+        //        saveData()
     }
     
-//MARK: - Add Item
+    //MARK: - Add Item
     
     @IBAction func addItemPressed(_ sender: UIBarButtonItem) {
         var textfieldOfAlert = UITextField()
@@ -86,7 +98,7 @@ class TodoListViewController: UITableViewController {
             message: "",
             preferredStyle: .alert
         )
-
+        
         let action = UIAlertAction(
             title: "Add Item",
             style: .default) { [self] action in
@@ -104,56 +116,56 @@ class TodoListViewController: UITableViewController {
                 }
                 self.tableView.reloadData()
             }
-
+        
         alert.addTextField { alertTextField in
             alertTextField.placeholder = "Create New Item"
             textfieldOfAlert = alertTextField
         }
-
+        
         alert.addAction(action)
         present(alert, animated: true)
     }
     
-//MARK: - Saving data to DB by using CoreData
+    //MARK: - Saving data to DB by using CoreData
     
-//    func saveData(){
-//        do {
-//            try context.save()
-//        } catch {
-//            print("Error Saving context \(error)")
-//        }
-//        self.tableView.reloadData()
-//    }
+    //    func saveData(){
+    //        do {
+    //            try context.save()
+    //        } catch {
+    //            print("Error Saving context \(error)")
+    //        }
+    //        self.tableView.reloadData()
+    //    }
     
-//MARK: - Reading/Loading data from DB by using CoreData
+    //MARK: - Reading/Loading data from DB by using CoreData
     func loadItems(
         
     ){
         todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         
         tableView.reloadData()
-//        let categoryPredicate = NSPredicate(
-//            format: "parentCategory.name MATCHES %@", selectedCategory!.name!
-//        )
-//
-//        if let additionalPredicate = predicate {
-//
-//            request.predicate = NSCompoundPredicate(
-//                andPredicateWithSubpredicates: [
-//                    additionalPredicate,
-//                    categoryPredicate
-//                ]
-//            )
-//
-//        } else {
-//            request.predicate = categoryPredicate
-//        }
-//
-//        do {
-//            itemArray = try context.fetch(request)
-//        } catch {
-//            print("Error with Fetching data By CoreData \(error)")
-//        }
+        //        let categoryPredicate = NSPredicate(
+        //            format: "parentCategory.name MATCHES %@", selectedCategory!.name!
+        //        )
+        //
+        //        if let additionalPredicate = predicate {
+        //
+        //            request.predicate = NSCompoundPredicate(
+        //                andPredicateWithSubpredicates: [
+        //                    additionalPredicate,
+        //                    categoryPredicate
+        //                ]
+        //            )
+        //
+        //        } else {
+        //            request.predicate = categoryPredicate
+        //        }
+        //
+        //        do {
+        //            itemArray = try context.fetch(request)
+        //        } catch {
+        //            print("Error with Fetching data By CoreData \(error)")
+        //        }
     }
 }
 
