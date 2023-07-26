@@ -24,10 +24,10 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //        let search = UISearchController(searchResultsController: nil)
-        //        search.delegate = self
-        //        search.searchBar.delegate = self
-        //        self.navigationItem.searchController = search
+//        let search = UISearchController(searchResultsController: nil)
+//        search.delegate = self
+//        search.searchBar.delegate = self
+//        self.navigationItem.searchController = search
     }
     
     //MARK: - TableView DataSource Methods
@@ -69,7 +69,7 @@ class TodoListViewController: UITableViewController {
         if let item = todoItems?[indexPath.row] {
             do{
                 try realm.write({
-//                    realm.delete(item)
+                    //                    realm.delete(item)
                     item.done = !item.done
                 })
                 
@@ -109,6 +109,8 @@ class TodoListViewController: UITableViewController {
                         try self.realm.write{
                             let newItem = Item()
                             newItem.title = textfieldOfAlert.text!
+                            newItem.dateCreated = Date()
+                            
                             currentCategory.items.append(newItem)
                         }
                     } catch {
@@ -171,9 +173,15 @@ class TodoListViewController: UITableViewController {
 }
 
 //MARK: - Search Bar Methods
-//
-//extension TodoListViewController: UISearchBarDelegate,UISearchControllerDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
+extension TodoListViewController: UISearchBarDelegate,UISearchControllerDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        todoItems = todoItems?
+            .filter("title CONTAINS[cd] %@", searchBar.text!)
+            .sorted(byKeyPath: "dateCreated", ascending: true)
+        tableView.reloadData()
+        
+        
 //        let request : NSFetchRequest<Item> = Item.fetchRequest()
 //
 //        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
@@ -181,14 +189,14 @@ class TodoListViewController: UITableViewController {
 //        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
 //
 //        loadItems(with: request, predicate: predicate)
-//    }
-//
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text?.count == 0 {
-//            loadItems()
-//            DispatchQueue.main.async {
-//                searchBar.resignFirstResponder()
-//            }
-//        }
-//    }
-//}
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
+}
