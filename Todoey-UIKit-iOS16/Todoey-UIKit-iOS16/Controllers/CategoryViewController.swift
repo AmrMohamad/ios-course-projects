@@ -28,9 +28,12 @@ class CategoryViewController: UITableViewController{
         )
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CategoryCell")
+        
+        loadCategories()
     }
     
     //MARK: - DataSource Methods
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return categories.count
@@ -38,9 +41,12 @@ class CategoryViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-        cell.textLabel?.text = "test Category"
+        let category = categories[indexPath.row]
+        cell.textLabel?.text = category.name
         return cell
     }
+    
+    //MARK: - Add New Cetegories
     
     @objc func addCategoryButtonPressed(_ sender: UIBarButtonItem){
         let alert = UIAlertController(
@@ -55,7 +61,7 @@ class CategoryViewController: UITableViewController{
                 let newCategroy = Category(context: self.context)
                 newCategroy.name = textFieldAlert.text!
                 self.categories.append(newCategroy)
-                self.tableView.reloadData()
+                self.save()
             }
         alert.addTextField { textField in
             textField.placeholder = "Name the new category"
@@ -63,5 +69,26 @@ class CategoryViewController: UITableViewController{
         }
         alert.addAction(action)
         present(alert, animated: true)
+    }
+    
+    //MARK: - Data Operations Methods
+    
+    func save(){
+        do{
+            try context.save()
+        } catch {
+            print("Error Saving Data \(error)")
+        }
+        tableView.reloadData()
+    }
+    
+    func loadCategories (){
+        let request: NSFetchRequest<Category> = Category.fetchRequest()
+        do{
+            categories = try context.fetch(request)
+        } catch {
+            print("Error loading Data \(error)")
+        }
+        tableView.reloadData()
     }
 }
