@@ -15,6 +15,7 @@
 		2D8DEAC92A3F301E00932B89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D8DEAC72A3F301E00932B89 /* LaunchScreen.storyboard */; };
 		2DCA59C62A55D79400683669 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA59C42A55D79400683669 /* DataModel.xcdatamodeld */; };
 		2DF4EF992A4605A9008BE00D /* BigTitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF4EF982A4605A9008BE00D /* BigTitleNavigationBar.swift */; };
+		7650817400EA891E3CEF7C2C /* Pods_Todoey_UIKit_iOS16.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F410C98960B2D1C0F040DF /* Pods_Todoey_UIKit_iOS16.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		2D8DEACA2A3F301E00932B89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DCA59C52A55D79400683669 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		2DF4EF982A4605A9008BE00D /* BigTitleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTitleNavigationBar.swift; sourceTree = "<group>"; };
+		5FE432EEF2C6D031A99A395E /* Pods-Todoey-UIKit-iOS16.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey-UIKit-iOS16.release.xcconfig"; path = "Target Support Files/Pods-Todoey-UIKit-iOS16/Pods-Todoey-UIKit-iOS16.release.xcconfig"; sourceTree = "<group>"; };
+		8E4291F242BEAFDB44D1551A /* Pods-Todoey-UIKit-iOS16.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey-UIKit-iOS16.debug.xcconfig"; path = "Target Support Files/Pods-Todoey-UIKit-iOS16/Pods-Todoey-UIKit-iOS16.debug.xcconfig"; sourceTree = "<group>"; };
+		99F410C98960B2D1C0F040DF /* Pods_Todoey_UIKit_iOS16.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoey_UIKit_iOS16.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7650817400EA891E3CEF7C2C /* Pods_Todoey_UIKit_iOS16.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				2D8DEABB2A3F301D00932B89 /* Todoey-UIKit-iOS16 */,
 				2D8DEABA2A3F301D00932B89 /* Products */,
+				63D972581F51FF85901BA9A5 /* Pods */,
+				FE8B2075FCC09543331EED4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +104,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		63D972581F51FF85901BA9A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E4291F242BEAFDB44D1551A /* Pods-Todoey-UIKit-iOS16.debug.xcconfig */,
+				5FE432EEF2C6D031A99A395E /* Pods-Todoey-UIKit-iOS16.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FE8B2075FCC09543331EED4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99F410C98960B2D1C0F040DF /* Pods_Todoey_UIKit_iOS16.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D8DEACD2A3F301E00932B89 /* Build configuration list for PBXNativeTarget "Todoey-UIKit-iOS16" */;
 			buildPhases = (
+				838097E6F0D674A975AFFB1C /* [CP] Check Pods Manifest.lock */,
 				2D8DEAB52A3F301D00932B89 /* Sources */,
 				2D8DEAB62A3F301D00932B89 /* Frameworks */,
 				2D8DEAB72A3F301D00932B89 /* Resources */,
+				18C494E556D6B536511AD034 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +188,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18C494E556D6B536511AD034 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Todoey-UIKit-iOS16/Pods-Todoey-UIKit-iOS16-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Todoey-UIKit-iOS16/Pods-Todoey-UIKit-iOS16-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Todoey-UIKit-iOS16/Pods-Todoey-UIKit-iOS16-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		838097E6F0D674A975AFFB1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Todoey-UIKit-iOS16-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D8DEAB52A3F301D00932B89 /* Sources */ = {
@@ -306,6 +375,7 @@
 		};
 		2D8DEACE2A3F301E00932B89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E4291F242BEAFDB44D1551A /* Pods-Todoey-UIKit-iOS16.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -332,6 +402,7 @@
 		};
 		2D8DEACF2A3F301E00932B89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FE432EEF2C6D031A99A395E /* Pods-Todoey-UIKit-iOS16.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
