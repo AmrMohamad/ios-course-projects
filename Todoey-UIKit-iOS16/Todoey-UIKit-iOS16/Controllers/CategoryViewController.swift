@@ -21,25 +21,25 @@ class CategoryViewController: UITableViewController{
             target: self,
             action: #selector(addCategoryButtonPressed)
         )
-//
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CategoryCell")
-//
-//        loadCategories()
+
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CategoryCell")
+
+        loadCategories()
     }
     
     //MARK: - DataSource Methods
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return categories.count
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-//        let category = categories[indexPath.row]
-//        cell.textLabel?.text = category.name
-//        return cell
-//    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return categories?.count ?? 1
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+       
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Category added yet"
+        return cell
+    }
     
     //MARK: - Add New Cetegories
     
@@ -87,14 +87,9 @@ class CategoryViewController: UITableViewController{
         }
         tableView.reloadData()
     }
-//    
-//    func loadCategories (){
-//        let request: NSFetchRequest<Category> = Category.fetchRequest()
-//        do{
-//            categories = try context.fetch(request)
-//        } catch {
-//            print("Error loading Data \(error)")
-//        }
-//        tableView.reloadData()
-//    }
+    
+    func loadCategories (){
+        categories = realm.objects(Category.self)
+        tableView.reloadData()
+    }
 }
