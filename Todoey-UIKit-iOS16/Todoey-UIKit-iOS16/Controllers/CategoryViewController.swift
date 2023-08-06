@@ -6,26 +6,21 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class CategoryViewController: UITableViewController{
     
-//    var categories = [Category]()
-//    let context    = (
-//        UIApplication
-//            .shared
-//            .delegate as! AppDelegate
-//    ).persistentContainer
-//        .viewContext
+    var categories: Results<Category>?
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        BigTitleNavigationBar(title: "Todoey")
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(
-//            barButtonSystemItem: .add,
-//            target: self,
-//            action: #selector(addCategoryButtonPressed)
-//        )
+        BigTitleNavigationBar(title: "Todoey")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addCategoryButtonPressed)
+        )
 //
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CategoryCell")
 //
@@ -48,28 +43,28 @@ class CategoryViewController: UITableViewController{
     
     //MARK: - Add New Cetegories
     
-//    @objc func addCategoryButtonPressed(_ sender: UIBarButtonItem){
-//        let alert = UIAlertController(
-//            title: "Add New Category",
-//            message: nil,
-//            preferredStyle: .alert
-//        )
-//        var textFieldAlert = UITextField()
-//        let action = UIAlertAction(
-//            title: "Add Category",
-//            style: .default) { action in
-//                let newCategroy = Category(context: self.context)
-//                newCategroy.name = textFieldAlert.text!
-//                self.categories.append(newCategroy)
-//                self.save()
-//            }
-//        alert.addTextField { textField in
-//            textField.placeholder = "Name the new category"
-//            textFieldAlert = textField
-//        }
-//        alert.addAction(action)
-//        present(alert, animated: true)
-//    }
+    @objc func addCategoryButtonPressed(_ sender: UIBarButtonItem){
+        let alert = UIAlertController(
+            title: "Add New Category",
+            message: nil,
+            preferredStyle: .alert
+        )
+        var textFieldAlert = UITextField()
+        let action = UIAlertAction(
+            title: "Add Category",
+            style: .default) { action in
+                let newCategroy = Category()
+                newCategroy.name = textFieldAlert.text!
+
+                self.save(category: newCategroy)
+            }
+        alert.addTextField { textField in
+            textField.placeholder = "Name the new category"
+            textFieldAlert = textField
+        }
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
     
     //MARK: - TabView Delegate Methods
     
@@ -82,14 +77,16 @@ class CategoryViewController: UITableViewController{
 //
     //MARK: - Data Operations Methods
     
-//    func save(){
-//        do{
-//            try context.save()
-//        } catch {
-//            print("Error Saving Data \(error)")
-//        }
-//        tableView.reloadData()
-//    }
+    func save(category: Object){
+        do{
+            try realm.write({
+                realm.add(category)
+            })
+        } catch {
+            print("Error Saving Data \(error)")
+        }
+        tableView.reloadData()
+    }
 //    
 //    func loadCategories (){
 //        let request: NSFetchRequest<Category> = Category.fetchRequest()
