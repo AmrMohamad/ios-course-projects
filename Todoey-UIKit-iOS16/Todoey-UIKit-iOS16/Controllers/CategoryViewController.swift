@@ -68,13 +68,13 @@ class CategoryViewController: UITableViewController{
     
     //MARK: - TabView Delegate Methods
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let todoVC = TodoListViewController()
-//        todoVC.selectedCategory = categories[indexPath.row]
-//        self.navigationController?.pushViewController(todoVC, animated: true)
-//
-//    }
-//
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let todoVC = TodoListViewController()
+        todoVC.selectedCategory = categories?[indexPath.row]
+        self.navigationController?.pushViewController(todoVC, animated: true)
+
+    }
+
     //MARK: - Data Operations Methods
     
     func save(category: Object){
