@@ -55,20 +55,22 @@ class TodoListViewController: UITableViewController {
             return cell
         }
     
-    //    //MARK: - Deleagte Methods
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //
-    //        let item = itemArray[indexPath.row]
-    //
-    ////        How to Delete Items : 👇🏻
-    ////        context.delete(item)
-    ////        itemArray.remove(at: indexPath.row)
-    //
-    //        item.done = !item.done
-    //        saveItem()
-    //
-    //        tableView.deselectRow(at: indexPath, animated: true)
-    //    }
+        //MARK: - Deleagte Methods
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            if let item = todoItems?[indexPath.row] {
+                do{
+                    try realm.write({
+                        item.done = !item.done
+                    })
+                }catch{
+                    print("Error saving \(error)")
+
+                }
+            }
+            tableView.reloadData()
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     
     //MARK: - Add item
     
