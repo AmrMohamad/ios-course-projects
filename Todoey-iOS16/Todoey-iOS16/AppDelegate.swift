@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         do {
-            let realm = try Realm()
+            _ = try Realm()
         } catch {
             print("Error with initializing Realm \(error)")
         }
