@@ -7,5 +7,5 @@ target 'Todoey-UIKit-iOS16' do
   # Pods for Todoey-UIKit-iOS16
   
   pod 'RealmSwift', '~>10.39.0'
-
+  pod 'SwipeCellKit'
 end
