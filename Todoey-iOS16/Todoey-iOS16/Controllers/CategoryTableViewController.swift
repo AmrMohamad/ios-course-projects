@@ -7,9 +7,9 @@
 
 import UIKit
 import RealmSwift
-import SwipeCellKit
 
-class CategoryTableViewController: UITableViewController {
+
+class CategoryTableViewController: SwipeTableViewController {
 
     let realm = try! Realm()
     var categories : Results<Category>?
@@ -28,12 +28,8 @@ class CategoryTableViewController: UITableViewController {
         
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView
-            .dequeueReusableCell(
-                withIdentifier: "categoryOfItems",
-                for: indexPath
-            ) as! SwipeTableViewCell
-        cell.delegate = self
+        super.identifierOfCell = "categoryOfItems"
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Category added yet"
         cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
@@ -94,45 +90,58 @@ class CategoryTableViewController: UITableViewController {
         
         tableView.reloadData()
     }
-}
-
-extension CategoryTableViewController: SwipeTableViewCellDelegate {
-    func tableView(
-        _ tableView: UITableView,
-        editActionsForRowAt indexPath: IndexPath,
-        for orientation: SwipeActionsOrientation
-    ) -> [SwipeAction]? {
-        guard orientation == .right else { return nil }
-
-        let deleteAction = SwipeAction(
-            style: .destructive,
-            title: "Delete"
-        ) { action, indexPath in
-            // handle action by updating model with deletion
-            do {
-                try self.realm.write {
-                    if let categoryForDeletion = self.categories?[indexPath.row] {
-                        self.realm.delete(categoryForDeletion)
-                    }
-                }
-            } catch {
-                print("Error with deleting \(error)")
-            }
-        }
-
-        // customize the action appearance
-        deleteAction.image = UIImage(systemName: "trash")
-
-        return [deleteAction]
-    }
     
-    func tableView(
-        _ tableView: UITableView,
-        editActionsOptionsForRowAt indexPath: IndexPath,
-        for orientation: SwipeActionsOrientation
-    ) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = .destructive
-        return options
+    override func updateModel(at indexPath: IndexPath) {
+        do {
+            print("\n ============= Overrided Update work ============== \n")
+            try self.realm.write {
+                if let categoryForDeletion = self.categories?[indexPath.row] {
+                    self.realm.delete(categoryForDeletion)
+                }
+            }
+        } catch {
+            print("Error with deleting \(error)")
+        }
     }
 }
+
+//extension CategoryTableViewController: SwipeTableViewCellDelegate {
+//    func tableView(
+//        _ tableView: UITableView,
+//        editActionsForRowAt indexPath: IndexPath,
+//        for orientation: SwipeActionsOrientation
+//    ) -> [SwipeAction]? {
+//        guard orientation == .right else { return nil }
+//
+//        let deleteAction = SwipeAction(
+//            style: .destructive,
+//            title: "Delete"
+//        ) { action, indexPath in
+//            // handle action by updating model with deletion
+//            do {
+//                try self.realm.write {
+//                    if let categoryForDeletion = self.categories?[indexPath.row] {
+//                        self.realm.delete(categoryForDeletion)
+//                    }
+//                }
+//            } catch {
+//                print("Error with deleting \(error)")
+//            }
+//        }
+//
+//        // customize the action appearance
+//        deleteAction.image = UIImage(systemName: "trash")
+//
+//        return [deleteAction]
+//    }
+//
+//    func tableView(
+//        _ tableView: UITableView,
+//        editActionsOptionsForRowAt indexPath: IndexPath,
+//        for orientation: SwipeActionsOrientation
+//    ) -> SwipeOptions {
+//        var options = SwipeOptions()
+//        options.expansionStyle = .destructive
+//        return options
+//    }
+//}
