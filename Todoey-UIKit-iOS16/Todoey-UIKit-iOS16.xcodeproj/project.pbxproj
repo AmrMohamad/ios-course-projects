@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D3F717F2A8E7F40006C902B /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3F717E2A8E7F40006C902B /* SwipeTableViewController.swift */; };
 		2D4F6F222A8BCB18000A26C8 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4F6F212A8BCB18000A26C8 /* CategoryViewController.swift */; };
 		2D5D364C2A8D1AF000D66FD7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D364B2A8D1AF000D66FD7 /* Category.swift */; };
 		2D5D364E2A8D1B0600D66FD7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5D364D2A8D1B0600D66FD7 /* Item.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D3F717E2A8E7F40006C902B /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		2D4F6F212A8BCB18000A26C8 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		2D5D364B2A8D1AF000D66FD7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2D5D364D2A8D1B0600D66FD7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				2D4F6F212A8BCB18000A26C8 /* CategoryViewController.swift */,
 				2D8DEAC02A3F301D00932B89 /* TodoListViewController.swift */,
+				2D3F717E2A8E7F40006C902B /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3F717F2A8E7F40006C902B /* SwipeTableViewController.swift in Sources */,
 				2DF4EF992A4605A9008BE00D /* BigTitleNavigationBar.swift in Sources */,
 				2D8DEAC12A3F301D00932B89 /* TodoListViewController.swift in Sources */,
 				2D4F6F222A8BCB18000A26C8 /* CategoryViewController.swift in Sources */,
