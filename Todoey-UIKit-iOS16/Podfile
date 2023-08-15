@@ -8,4 +8,5 @@ target 'Todoey-UIKit-iOS16' do
   
   pod 'RealmSwift', '~>10.39.0'
   pod 'SwipeCellKit'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/wowansm/Chameleon.git' , :branch => 'swift5'
 end
