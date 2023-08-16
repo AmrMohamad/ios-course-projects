@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import SwipeCellKit
+import ChameleonFramework
 
 class CategoryViewController: SwipeTableViewController{
     
@@ -40,6 +41,19 @@ class CategoryViewController: SwipeTableViewController{
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
        
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Category added yet"
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+//        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].colorOfCategory ?? "FFFFFF")
+        cell.textLabel?.textColor = UIColor(hexString: categories?[indexPath.row].colorOfCategory ?? "000000")
+        cell.textLabel?.layer.shadowColor = UIColor(
+            hexString: categories?[indexPath.row].colorOfCategory ?? "000000"
+        )?.darken(byPercentage: 0.11)?.cgColor
+//        ContrastColorOf(
+//            UIColor(hexString: categories?[indexPath.row].colorOfCategory ?? "000000")!,
+//            returnFlat: true
+//        ).cgColor
+        cell.textLabel?.layer.shadowRadius = 1.8
+        cell.textLabel?.layer.shadowOpacity = 0.55
+        cell.textLabel?.layer.shadowOffset = CGSize(width: 0.05, height: 0.05)
         return cell
     }
     
@@ -56,8 +70,9 @@ class CategoryViewController: SwipeTableViewController{
             title: "Add Category",
             style: .default) { action in
                 let newCategroy = Category()
-                newCategroy.name = textFieldAlert.text!
-
+                newCategroy.name            = textFieldAlert.text!
+                newCategroy.colorOfCategory = UIColor.randomFlat().hexValue()
+                
                 self.save(category: newCategroy)
             }
         alert.addTextField { textField in

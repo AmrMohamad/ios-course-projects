@@ -8,12 +8,13 @@
 import UIKit
 import RealmSwift
 import SwipeCellKit
+import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
     
     var todoItems: Results<Item>?
     let realm = try! Realm()
-    
+    let search = UISearchController(searchResultsController: nil)
     var selectedCategory: Category? {
         didSet{
             loadItems()
@@ -33,11 +34,59 @@ class TodoListViewController: SwipeTableViewController {
         
         tableView.register(SwipeTableViewCell.self, forCellReuseIdentifier: "ToDoItemCell")
         
-        let search = UISearchController(searchResultsController: nil)
+        
         search.delegate = self
         search.searchBar.delegate = self
         self.navigationItem.searchController = search
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let colorOfCategory = selectedCategory?.colorOfCategory {
+            guard let navBar = navigationController?
+                .navigationBar else {
+                fatalError("Navigation Bar not exist YET")
+            }
+            if let navBarColor = UIColor(hexString: colorOfCategory) {
+                view.backgroundColor   = navBarColor
+                let contrastColor = ContrastColorOf(navBarColor, returnFlat: true)
+                navBar.barTintColor    = navBarColor
+                navBar.backgroundColor = navBarColor
+                navBar.tintColor = contrastColor
+                navBar.largeTitleTextAttributes = [
+                    .foregroundColor : contrastColor
+                ]
+                navBar.titleTextAttributes = [
+                    .foregroundColor : contrastColor
+                ]
+                var searchBar = search.searchBar
+                searchBar.searchTextField.backgroundColor = contrastColor
+                searchBar.tintColor                 = contrastColor
+                searchBar.searchTextField.textColor = navBarColor
+                searchBar.searchTextField.tintColor = navBarColor
+                searchBar.searchTextField.leftView?.tintColor = navBarColor
+                searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
+                    string: "Search", attributes: [
+                        .foregroundColor : navBarColor.darken(byPercentage: 0.3)!
+                    ]
+                )
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        guard let navBar = navigationController?
+            .navigationBar else {fatalError("Navigation controller not exist yet")}
+        navBar.barTintColor = UINavigationController().navigationBar.barTintColor
+        navBar.backgroundColor = UINavigationController().navigationBar.backgroundColor
+        navBar.tintColor    = UIColor.tintColor
+        
+        navBar.largeTitleTextAttributes  = [
+            .foregroundColor : UIColor.label
+        ]
+        navBar.titleTextAttributes = [
+            .foregroundColor : UIColor.label
+        ]
     }
     
     
