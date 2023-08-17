@@ -39,21 +39,18 @@ class CategoryViewController: SwipeTableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         super.identifierOfCell = "CategoryCell"
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-       
-        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Category added yet"
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-//        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].colorOfCategory ?? "FFFFFF")
-        cell.textLabel?.textColor = UIColor(hexString: categories?[indexPath.row].colorOfCategory ?? "000000")
-        cell.textLabel?.layer.shadowColor = UIColor(
+        let customTextLabel = cell.textLabel
+        customTextLabel?.text = categories?[indexPath.row].name ?? "No Category added yet"
+        customTextLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        customTextLabel?.textColor = UIColor(hexString: categories?[indexPath.row].colorOfCategory ?? "000000")
+        customTextLabel?.layer.shadowColor = UIColor(
             hexString: categories?[indexPath.row].colorOfCategory ?? "000000"
         )?.darken(byPercentage: 0.11)?.cgColor
-//        ContrastColorOf(
-//            UIColor(hexString: categories?[indexPath.row].colorOfCategory ?? "000000")!,
-//            returnFlat: true
-//        ).cgColor
-        cell.textLabel?.layer.shadowRadius = 1.8
-        cell.textLabel?.layer.shadowOpacity = 0.55
-        cell.textLabel?.layer.shadowOffset = CGSize(width: 0.05, height: 0.05)
+
+        customTextLabel?.layer.shadowRadius = 1.8
+        customTextLabel?.layer.shadowOpacity = 0.55
+        customTextLabel?.layer.shadowOffset = CGSize(width: 0.05, height: 0.05)
+//        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].colorOfCategory ?? "FFFFFF")
         return cell
     }
     
