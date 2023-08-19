@@ -12,6 +12,7 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     var identifierOfCell : String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.separatorStyle = .none
     }
     
     // MARK: - Table view data source
