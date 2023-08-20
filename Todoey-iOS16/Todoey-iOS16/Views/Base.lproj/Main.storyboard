@@ -83,10 +83,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="qeU-46-Hub" id="Mss-oZ-VCv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrq-41-ZK9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2404" y="-56"/>
+            <point key="canvasLocation" x="2399" y="-56"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z0n-am-wWm">

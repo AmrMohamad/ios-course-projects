@@ -19,7 +19,7 @@ class CategoryTableViewController: SwipeTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCategories()
-        tableView.rowHeight = 60.0
+        
     }
 
     //MARK: - TableView DataSource Methods
@@ -34,7 +34,11 @@ class CategoryTableViewController: SwipeTableViewController {
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Category added yet"
         cell.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].bgColorOfCategory ?? "FFFFFF")
+        if let categoryColor = UIColor(hexString: categories?[indexPath.row].bgColorOfCategory ?? "FFFFFF") {
+            cell.backgroundColor = categoryColor
+            cell.textLabel?.textColor = ContrastColorOf(categoryColor, returnFlat: true)
+        }
+        
         return cell
     }
     

@@ -11,6 +11,8 @@ import ChameleonFramework
 
 class TodoListViewController: SwipeTableViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var todoItems : Results<Item>?
     let realm = try! Realm()
     
@@ -31,6 +33,44 @@ class TodoListViewController: SwipeTableViewController {
 //        self.navigationItem.searchController = search
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let colorOfCategory = selectedCategory?.bgColorOfCategory {
+            guard let navBar = navigationController?
+                .navigationBar else {fatalError("Navigation controller not exist yet")}
+            if let navBarColor = UIColor(hexString: colorOfCategory) {
+                
+                
+//                navBar.backgroundColor           = navBarColor
+                navBar.barTintColor              = navBarColor
+                navBar.tintColor                 = ContrastColorOf(navBarColor, returnFlat: true)
+                navBar.largeTitleTextAttributes  = [
+                    .foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)
+                ]
+                navBar.titleTextAttributes = [
+                    .foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)
+                ]
+                view.backgroundColor = navBarColor
+                searchBar.barTintColor = navBarColor
+                
+            }
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        guard let navBar = navigationController?
+            .navigationBar else {fatalError("Navigation controller not exist yet")}
+        navBar.barTintColor = UINavigationController().navigationBar.barTintColor
+        navBar.tintColor    = UIColor.tintColor
+        
+        navBar.largeTitleTextAttributes  = [
+            .foregroundColor : UIColor.label
+        ]
+        navBar.titleTextAttributes = [
+            .foregroundColor : UIColor.label
+        ]
+    }
+    
     //MARK: - TableView DataSource Methods
     override func tableView(
         _ tableView: UITableView,
@@ -49,8 +89,6 @@ class TodoListViewController: SwipeTableViewController {
 //            .dequeueReusableCell(
 //                withIdentifier: "ToDoItemCell",
 //                for: indexPath)
-        
-        
         
         if let item = todoItems?[indexPath.row] {
             if let color = UIColor(hexString: selectedCategory!.bgColorOfCategory)?
