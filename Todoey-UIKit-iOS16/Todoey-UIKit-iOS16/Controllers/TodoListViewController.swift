@@ -59,7 +59,7 @@ class TodoListViewController: SwipeTableViewController {
                 navBar.titleTextAttributes = [
                     .foregroundColor : contrastColor
                 ]
-                var searchBar = search.searchBar
+                let searchBar = search.searchBar
                 searchBar.searchTextField.backgroundColor = contrastColor
                 searchBar.tintColor                 = contrastColor
                 searchBar.searchTextField.textColor = navBarColor
@@ -100,6 +100,15 @@ class TodoListViewController: SwipeTableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let item = todoItems?[indexPath.row] {
+            
+            if let colorOfCategory = UIColor(
+                hexString: selectedCategory!.colorOfCategory
+            )?.darken(byPercentage:
+                        (CGFloat(indexPath.row)/CGFloat(todoItems!.count))
+            ){
+                cell.backgroundColor = colorOfCategory
+                cell.textLabel?.textColor = ContrastColorOf(colorOfCategory, returnFlat: true)
+            }
             cell.textLabel?.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
         } else {
