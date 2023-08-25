@@ -37,11 +37,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D6AD5732A96699900136579 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2DE3F80D2A951F0C0077DC8F = {
 			isa = PBXGroup;
 			children = (
 				2DE3F8182A951F0C0077DC8F /* InspoQuotes-iOS16 */,
 				2DE3F8172A951F0C0077DC8F /* Products */,
+				2D6AD5732A96699900136579 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
