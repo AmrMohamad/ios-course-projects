@@ -11,7 +11,18 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var displayLabel: UILabel!
     
-    var isFinishedTypingNumber: Bool = true
+    private var isFinishedTypingNumber: Bool = true
+    private var displayedValue: Double {
+        get{
+            guard let number = Double(displayLabel.text!) else {
+                fatalError("Cannot convert string of label to a Double")
+            }
+            return number
+        }
+        set {
+            displayLabel.text = String(newValue)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +34,14 @@ class ViewController: UIViewController {
         isFinishedTypingNumber = true
         //        displayLabel.text = "0"
         if displayLabel.text! != "."{
-            guard let number = Double(displayLabel.text!) else {
-                fatalError("Cannot convert string of label to a Double")
-            }
             if let calMethod = sender.currentTitle {
                 switch calMethod {
                 case "+/-":
-                    displayLabel.text = number == 0.0 ? "0" : String(number * -1)
+                   displayedValue *= -1
                 case "AC":
                     displayLabel.text = "0"
                 case "%":
-                    displayLabel.text = number == 0.0 ? "0" : String(number * 0.01)
+                    displayedValue *= 0.01
                 default:
                     displayLabel.text = "0"
                 }
@@ -49,10 +57,7 @@ class ViewController: UIViewController {
             } else {
                 if displayLabel.text! != "."{
                     if numValue == "." {
-                        guard let currentDisplayValue = Double(displayLabel.text!) else {
-                            fatalError("Cannot convert string of label to a Double")
-                        }
-                        let isInt = floor(currentDisplayValue) == currentDisplayValue
+                        let isInt = floor(displayedValue) == displayedValue
                         if !isInt {return}
                     }
                 } else {return}
