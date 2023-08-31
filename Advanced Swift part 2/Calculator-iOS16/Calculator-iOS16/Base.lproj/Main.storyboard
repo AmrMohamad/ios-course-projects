@@ -21,7 +21,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0W-Ri-VAQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="140.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0  " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="kKA-bE-6Iv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="kKA-bE-6Iv">
                                                 <rect key="frame" x="5" y="5" width="404" height="130.5"/>
                                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="20"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
