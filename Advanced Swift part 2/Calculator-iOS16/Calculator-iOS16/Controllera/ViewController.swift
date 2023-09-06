@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var displayLabel: UILabel!
     
     private var isFinishedTypingNumber: Bool = true
@@ -29,22 +29,28 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         displayLabel.text = "0"
     }
+    var calculator = CalculatorLogic()
     
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         isFinishedTypingNumber = true
         //        displayLabel.text = "0"
+        calculator.setNumber(displayedValue)
         if displayLabel.text! != "."{
             if let calMethod = sender.currentTitle {
-                switch calMethod {
-                case "+/-":
-                   displayedValue *= -1
-                case "AC":
-                    displayLabel.text = "0"
-                case "%":
-                    displayedValue *= 0.01
-                default:
-                    displayLabel.text = "0"
+                
+                if let result = calculator.calFunctions(symbol: calMethod) {
+                    displayedValue = result
                 }
+                //                switch calMethod {
+                //                case "+/-":
+                //                   displayedValue *= -1
+                //                case "AC":
+                //                    displayLabel.text = "0"
+                //                case "%":
+                //                    displayedValue *= 0.01
+                //                default:
+                //                    displayLabel.text = "0"
+                //                }
             }
         } else {return}
     }
